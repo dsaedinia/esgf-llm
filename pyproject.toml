@@ -1,0 +1,11 @@
+[project]
+name = "esgf-llm"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "intake-esgf>=2025.7.16",
+    "jupyter>=1.1.1",
+    "open-webui>=0.6.5",
+]

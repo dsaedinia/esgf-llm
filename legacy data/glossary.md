@@ -1,0 +1,105 @@
+# ESGF Glossary
+
+## variable IDs
+
+- **precipitation** → `pr`
+- **temperature** → `tas`
+- **gross primary production** → `gpp`
+- **air pressure at sea level** → `psl`
+- **moisture content of soil layer** → `mrsos`
+- **soil moisture** → `mrso`
+- **surface downward eastward stress** → `tauu`
+- **surface downward northward stress** → `tauv`
+- **surface snow thickness** → `snd`
+- **surface upward latent heat flux** → `hfls`
+- **surface upward sensible heat flux** → `hfss`
+- **surface downwelling longwave flux in air** → `rlds`
+- **surface upwelling longwave flux in air** → `rlus`
+- **surface downwelling shortwave flux in air** → `rsds`
+- **surface upwelling shortwave flux in air** → `rsus`
+- **surface temperature** → `ts`
+- **surface air pressure** → `ps`
+- **snow fall flux** → `prsn`
+- **convective precipitation flux** → `prc`
+- **atmosphere water vapor content** → `prw`
+- **soil frozen water content** → `mrfso`
+- **surface runoff flux** → `mrros`
+- **runoff flux** → `mrro`
+- **surface snow amount where land** → `snw`
+- **surface snow area fraction where land** → `snc`
+- **surface snow melt flux where land** → `snm`
+- **eastward wind** → `uas`
+- **northward wind** → `vas`
+- **specific humidity** → `huss`
+- **toa incoming shortwave flux** → `rsdt`
+- **toa outgoing shortwave flux** → `rsut`
+- **toa outgoing longwave flux** → `rlut`
+- **net downward radiative flux at top of atmosphere model** → `rtmt`
+- **net downward shortwave flux in air** → `rsntp`
+- **net upward longwave flux in air** → `rlntp`
+- **net downward shortwave flux in air assuming clear sky** → `rsntpcs`
+- **net upward longwave flux in air assuming clear sky** → `rlntpcs`
+- **surface downwelling shortwave flux in air assuming clear sky** → `rsdcscs`
+- **surface upwelling shortwave flux in air assuming clear sky** → `rsuscs`
+- **surface downwelling longwave flux in air assuming clear sky** → `rldscs`
+- **toa outgoing longwave flux assuming clear sky** → `rlutcs`
+- **toa outgoing shortwave flux assuming clear sky** → `rsutcs`
+- **cloud area fraction** → `clt`
+- **atmosphere cloud condensed water content** → `clwvi`
+- **atmosphere cloud ice content** → `clivi`
+- **surface altitude** → `orog`
+- **land area fraction** → `sftlf`
+- **land ice area fraction** → `sftgif`
+- **soil moisture content at field capacity** → `mrsofc`
+- **cloud area fraction in atmosphere layer** → `cl`
+- **air temperature** → `ta`
+- **eastward wind** → `ua`
+- **northward wind** → `va`
+- **lagrangian tendency of air pressure** → `wap`
+- **geopotential height** → `zg`
+- **relative humidity** → `hur`
+- **mole fraction of o3 in air** → `tro3`
+- **northward ocean heat transport** → `hfogo`
+- **ocean meridional overturning streamfunction** → `stfmmc`
+- **sea surface height above geoid** → `zos`
+- **global average thermosteric sea level change** → `zostoga`
+- **global average sea level change** → `zosga`
+- **sea surface temperature** → `tos`
+- **sea ice area fraction** → `sic`
+- **sea ice thickness** → `sit`
+- **eastward sea ice velocity** → `usi`
+- **northward sea ice velocity** → `vsi`
+- **water flux into ocean** → `wfo`
+- **ocean barotropic streamfunction** → `stfbarot`
+- **heat flux correction where ocean** → `hfcorr`
+- **water flux correction where ocean** → `wfcorr`
+- **eastward momentum flux correction where ocean** → `tauucorr`
+- **northward momentum flux correction where ocean** → `tauvcorr`
+- **sea floor depth below geoid** → `zobt`
+- **prescribed heat flux into slab ocean** → `qflux`
+- **sea water salinity** → `so`
+- **sea water potential temperature** → `thetao`
+- **sea water potential density** → `rhopoto`
+- **eastward sea water velocity** → `uo`
+- **northward sea water velocity** → `vo`
+- **upward sea water velocity** → `wo`
+- **minimum air temperature** → `tasmin`
+- **maximum air temperature** → `tasmax`
+- **isccp cloud area fraction** → `clisccp`
+- **mass concentration of sulfate aerosol in air** → `trsul`
+- **atmosphere content of sulfate aerosol** → `trsult`
+- **ocean mixed layer thickness** → `zmlo`
+- **northward ocean heat transport due to diffusion** → `htovdiff`
+- **northward ocean heat transport due to gyre** → `htovgyre`
+- **northward ocean heat transport due to overturning** → `htovovrt`
+- **northward ocean salt transport due to diffusion** → `sltovdiff`
+- **northward ocean salt transport due to gyre** → `sltovgyre`
+- **northward ocean salt transport due to overturning** → `sltovovrt`
+- **water evaporation flux where sea ice** → `sbl`
+- **upward sea ice basal heat flux** → `hfsib`
+- **downward sea ice basal salt flux** → `sltfsib`
+- **precipitation flux onto canopy** → `prveg`
+- **water evaporation flux from canopy** → `evspsblveg`
+- **atmosphere boundary layer thickness** → `zmla`
+- **root_depth** → `rootd`
+- **wind speed** → `sfcWind`

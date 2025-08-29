@@ -1,0 +1,1323 @@
+- **2m Dewpoint Temperature** → `tdps`
+- **3D-Field of Transported CO2** → `co23D`
+- **Abiotic Carbonate Ion Concentration** → `co3abio`
+- **Abiotic Delta Pco Partial Pressure** → `dpco2abio`
+- **Abiotic Dissolved Inorganic Carbon Concentration** → `dissicabio`
+- **Abiotic Dissolved Inorganic Carbon-14 Concentration** → `dissi14cabio`
+- **Abiotic pH** → `phabio`
+- **Abiotic Surface Aqueous Partial Pressure of CO2** → `spco2abio`
+- **Aerodynamic Resistance** → `ares`
+- **Aerosol Backscatter Coefficient** → `bs550aer`
+- **Aerosol Extinction Coefficient** → `ec550aer`
+- **Aerosol Level Absorption Optical Thickness for Each Band** → `aeroptbnd`
+- **Aerosol Level Asymmetry Parameter for Each Band** → `aerasymbnd`
+- **Aerosol Level Single Scattering Albedo for Each Band** → `aerssabnd`
+- **Aerosol Number Concentration** → `conccn`
+- **Aerosol Optical Depth at 550nm Due to Biomass Burning** → `od550bb`
+- **Aerosol Optical Depth at 550nm Due to Stratospheric Volcanic Aerosols** → `aod550volso4`
+- **Aerosol Sulfate Mass Mixing Ratio** → `mmrso4`
+- **Aerosol Water Mass Mixing Ratio** → `mmraerh2o`
+- **Aerosol Water Optical Thickness at 550nm** → `od550aerh2o`
+- **Age of Sea Ice** → `siage`
+- **Air Pressure at Convective Cloud Base** → `ccb`
+- **Air Pressure at Convective Cloud Top** → `cct`
+- **Air Temperature** → `ta`
+- **Air Temperature** → `ta19`
+- **Air Temperature** → `ta27`
+- **Air Temperature** → `ta500`
+- **Air Temperature** → `ta700`
+- **Air Temperature** → `ta7h`
+- **Air Temperature** → `ta8`
+- **Air Temperature** → `ta850`
+- **Air Temperature at Cloud Top** → `ttop`
+- **All-Sky Shortwave Flux Due to Dust at Toa** → `swtoaasdust`
+- **All-Sky Surface Longwave Radiative Flux Due to Dust** → `lwsrfasdust`
+- **All-Sky Surface Shortwave Radiative Flux Due to Dust** → `swsrfasdust`
+- **Altitude of Model Full-Levels** → `zfull`
+- **Altitude of Model Half-Levels** → `zhalf`
+- **Ambient Aerosol Absorption Optical Thickness at 550nm** → `abs550aer`
+- **Ambient Aerosol Optical Depth at 870nm** → `od870aer`
+- **Ambient Aerosol Optical Thickness at 440nm** → `od440aer`
+- **Ambient Aerosol Optical Thickness at 550nm** → `od550aer`
+- **Ambient Aerosol Optical Thickness at 550nm** → `od550csaer`
+- **Ambient Fine Aerosol Optical Depth at 550nm** → `od550lt1aer`
+- **Annual Gross Percentage of Land-Use Tile That Was Transferred into Other Land-Use Tiles** → `fracOutLut`
+- **Annual Gross Percentage That Was Transferred into This Tile from Other Land-Use Tiles** → `fracInLut`
+- **Anthropogenic Heat Flux Generated from non-Renewable Human Primary Energy Consumption** → `fahLut`
+- **Aqueous-Phase Production Rate of SO4** → `cheaqpso4`
+- **Aragonite Concentration** → `arag`
+- **Aragonite Dissolution** → `darag`
+- **Aragonite Production** → `intparag`
+- **Aragonite Production** → `parag`
+- **Aragonite Saturation Depth** → `zsatarag`
+- **Area Covered by Floating Ice Shelves** → `iareafl`
+- **Area Covered by Grounded Ice Sheet** → `iareagr`
+- **Artificial Tracer with 50 Day Lifetime** → `nh50`
+- **Atmosphere CO2** → `co2s`
+- **Atmospheric Drag Coefficient** → `sidragtop`
+- **Autotrophic Respiration on Grass Tiles as Carbon Mass Flux [kgC m-2 s-1]** → `raGrass`
+- **Autotrophic Respiration on Land-Use Tile as Carbon Mass Flux [kgC m-2 s-1]** → `raLut`
+- **Autotrophic Respiration on Shrub Tiles as Carbon Mass Flux [kgC m-2 s-1]** → `raShrub`
+- **Autotrophic Respiration on Tree Tiles as Carbon Mass Flux [kgC m-2 s-1]** → `raTree`
+- **Average Layer Fraction of Frozen Moisture** → `mrfsofr`
+- **Average Layer Fraction of Liquid Moisture** → `mrlqso`
+- **Average Normal Stress in Sea Ice** → `sistresave`
+- **Bacterial Carbon Concentration** → `bacc`
+- **Bare Soil Evaporation** → `es`
+- **Bare Soil Percentage Area Coverage** → `baresoilFrac`
+- **Basal Specific Mass Balance Flux of Floating Ice Shelf** → `libmassbffl`
+- **Basal Specific Mass Balance Flux of Grounded Ice Sheet** → `libmassbfgr`
+- **Basal Temperature of Floating Ice Shelf** → `litempbotfl`
+- **Basal Temperature of Grounded Ice Sheet** → `litempbotgr`
+- **Bedrock Altitude** → `topg`
+- **Biogenic Iron Production** → `pbfe`
+- **Biogenic Silicon Production** → `pbsi`
+- **Biological Nitrogen Fixation** → `fBNF`
+- **Black Carbon Optical Thickness at 550nm** → `od550bc`
+- **Boundary Layer Depth** → `bldep`
+- **Broadleaf Deciduous Tree Area Percentage** → `treeFracBdlDcd`
+- **Broadleaf Evergreen Tree Area Percentage** → `treeFracBdlEvg`
+- **C2H2 Volume Mixing Ratio** → `c2h2`
+- **C2H6 Volume Mixing Ratio** → `c2h6`
+- **C3 Natural Grass Area Percentage** → `grassFracC3`
+- **C3 Pasture Area Percentage** → `pastureFracC3`
+- **C3H6 Volume Mixing Ratio** → `c3h6`
+- **C3H8 Volume Mixing Ratio** → `c3h8`
+- **C4 Natural Grass Area Percentage** → `grassFracC4`
+- **C4 Pasture Area Percentage** → `pastureFracC4`
+- **Calcite Concentration** → `calc`
+- **Calcite Dissolution** → `dcalc`
+- **Calcite Production** → `intpcalcite`
+- **Calcite Production** → `pcalc`
+- **Calcite Saturation Depth** → `zsatcalc`
+- **CALIPSO Cloud Cover Percentage Undetected by CloudSat (as Percentage of Area Covered)** → `clcalipso2`
+- **CALIPSO High Level Cloud Area Percentage** → `clhcalipso`
+- **CALIPSO Ice Cloud Percentage** → `clcalipsoice`
+- **CALIPSO Liquid Cloud Percentage** → `clcalipsoliq`
+- **CALIPSO Low Level Cloud Cover Percentage** → `cllcalipso`
+- **CALIPSO Mid Level Cloud Cover Percentage** → `clmcalipso`
+- **CALIPSO Percentage Cloud Cover** → `clcalipso`
+- **CALIPSO Scattering Ratio CFAD** → `cfadLidarsr532`
+- **CALIPSO Total Cloud Cover Percentage** → `cltcalipso`
+- **Canopy Albedo** → `albc`
+- **Canopy Covered Area Percentage** → `cnc`
+- **Capacity of Soil to Store Water (Field Capacity)** → `mrsofc`
+- **Carbon  in Above and Below-Ground Litter Pools on Land-Use Tiles** → `cLitterLut`
+- **Carbon Harvested Due to Land-Use or Land-Cover Change Process That Enters Anthropogenic Product Pools on Tile** → `fLulccProductLut`
+- **Carbon in Soil Pool on Land-Use Tiles** → `cSoilLut`
+- **Carbon in Vegetation on Land-Use Tiles** → `cVegLut`
+- **Carbon Mass Flux from Litter, CWD or any non-Living Pool into Atmosphere Due to CO2 Emission from All Fire [kgC m-2 s-1]** → `fLitterFire`
+- **Carbon Mass Flux from Vegetation into Atmosphere Due to CO2 Emission from All Fire [kgC m-2 s-1]** → `fVegFire`
+- **Carbon Mass Flux from Vegetation, Litter or Soil Pools into the Atmosphere Due to any Human Activity [kgC m-2 s-1]** → `fAnthDisturb`
+- **Carbon Mass Flux into Atmosphere Due to All Anthropogenic Emissions of CO2 [kgC m-2 s-1]** → `fco2antt`
+- **Carbon Mass Flux into Atmosphere Due to Autotrophic (Plant) Respiration on Land [kgC m-2 s-1]** → `ra`
+- **Carbon Mass Flux into Atmosphere Due to CO2 Emission from Fire Excluding Land-Use Change [kgC m-2 s-1]** → `fFire`
+- **Carbon Mass Flux into Atmosphere Due to CO2 Emission from Fire Including All Sources [kgC m-2 s-1]** → `fFireAll`
+- **Carbon Mass Flux into Atmosphere Due to CO2 Emission from Natural Fire [kgC m-2 s-1]** → `fFireNat`
+- **Carbon Mass Flux into Atmosphere Due to Crop Harvesting [kgC m-2 s-1]** → `fHarvest`
+- **Carbon Mass Flux into Atmosphere Due to Fossil Fuel Emissions of CO2 [kgC m-2 s-1]** → `fco2fos`
+- **Carbon Mass Flux into Atmosphere Due to Grazing on Land [kgC m-2 s-1]** → `fGrazing`
+- **Carbon Mass Flux into Atmosphere Due to Heterotrophic Respiration from Litter on Land** → `rhLitter`
+- **Carbon Mass Flux into Atmosphere Due to Heterotrophic Respiration from Soil on Land** → `rhSoil`
+- **Carbon Mass Flux into Atmosphere Due to Maintenance Autotrophic Respiration on Land [kgC m-2 s-1]** → `rMaint`
+- **Carbon Mass Flux out of Atmosphere Due to Gross Primary Production on Land [kgC m-2 s-1]** → `gpp`
+- **Carbon Mass Flux out of Atmosphere Due to Net Biospheric Production on Land [kgC m-2 s-1]** → `nbp`
+- **Carbon Mass in Above-Ground Litter** → `cLitterAbove`
+- **Carbon Mass in Above-Ground Litter** → `cLitterSurf`
+- **Carbon Mass in Below-Ground Litter** → `cLitterBelow`
+- **Carbon Mass in Below-Ground Litter** → `cLitterSubSurf`
+- **Carbon Mass in Coarse Woody Debris** → `cCwd`
+- **Carbon Mass in Coarse Woody Debris** → `cLitterCwd`
+- **Carbon Mass in Each Model Soil Level (Summed over All Soil Carbon Pools in That Level)** → `cSoilLevels`
+- **Carbon Mass in Each Model Soil Pool (Summed over Vertical Levels)** → `cSoilPools`
+- **Carbon Mass in Fast Soil Pool** → `cSoilFast`
+- **Carbon Mass in Leaves** → `cLeaf`
+- **Carbon Mass in Litter on Grass Tiles** → `cLitterGrass`
+- **Carbon Mass in Litter on Shrub Tiles** → `cLitterShrub`
+- **Carbon Mass in Litter on Tree Tiles** → `cLitterTree`
+- **Carbon Mass in Litter Pool** → `cLitter`
+- **Carbon Mass in Medium Soil Pool** → `cSoilMedium`
+- **Carbon Mass in Model Soil Pool** → `cSoil`
+- **Carbon Mass in Other Living Compartments on Land** → `cMisc`
+- **Carbon Mass in Products of Land-Use Change** → `cProduct`
+- **Carbon Mass in Roots** → `cRoot`
+- **Carbon Mass in Slow Soil Pool** → `cSoilSlow`
+- **Carbon Mass in Soil on Grass Tiles** → `cSoilGrass`
+- **Carbon Mass in Soil on Shrub Tiles** → `cSoilShrub`
+- **Carbon Mass in Soil on Tree Tiles** → `cSoilTree`
+- **Carbon Mass in Soil Pool Above 1m Depth** → `cSoilAbove1m`
+- **Carbon Mass in Stem** → `cStem`
+- **Carbon Mass in Vegetation** → `cVeg`
+- **Carbon Mass in Vegetation Components Other than Leaves, Stems and Roots** → `cOther`
+- **Carbon Mass in Vegetation on Grass Tiles** → `cVegGrass`
+- **Carbon Mass in Vegetation on Shrub Tiles** → `cVegShrub`
+- **Carbon Mass in Vegetation on Tree Tiles** → `cVegTree`
+- **Carbon Mass in Wood** → `cWood`
+- **Carbon Transferred Directly to Atmosphere Due to any Land-Use or Land-Cover Change Activities [kgC m-2 s-1]** → `fLulccAtmLut`
+- **Carbon Transferred to Soil or Litter Pools Due to Land-Use or Land-Cover Change Processes on Tile** → `fLulccResidueLut`
+- **Carbon-13 Mass Flux into Atmosphere Due to Autotrophic (Plant) Respiration on Land [kgC m-2 s-1]** → `rac13`
+- **Carbon-13 Mass Flux into Atmosphere Due to Heterotrophic Respiration on Land [kgC m-2 s-1]** → `rhc13`
+- **Carbon-13 Mass Flux out of Atmosphere Due to Gross Primary Production on Land [kgC m-2 s-1]** → `gppc13`
+- **Carbon-14 Mass Flux into Atmosphere Due to Autotrophic (Plant) Respiration on Land [kgC m-2 s-1]** → `rac14`
+- **Carbon-14 Mass Flux into Atmosphere Due to Heterotrophic Respiration on Land [kgC m-2 s-1]** → `rhc14`
+- **Carbon-14 Mass Flux out of Atmosphere Due to Gross Primary Production on Land [kgC m-2 s-1]** → `gppc14`
+- **Carbonate Ion Concentration** → `co3`
+- **CH3COCH3 Volume Mixing Ratio** → `ch3coch3`
+- **Change in Groundwater** → `dgw`
+- **Change in Interception Storage** → `dcw`
+- **Change in River Storage** → `drivw`
+- **Change in Snow and Ice Cold Content** → `dtesn`
+- **Change in Snow Water Equivalent** → `dsn`
+- **Change in Soil Moisture** → `dslw`
+- **Change in Surface Heat Storage** → `dtes`
+- **Change in Surface Water Storage** → `dsw`
+- **Chemical Production of Dry Aerosol Secondary Organic Matter** → `chepsoa`
+- **Clay Fraction** → `clayfrac`
+- **Clear Sky Shortwave Flux Due to Dust at Toa** → `swtoacsdust`
+- **Clear-Sky Surface Longwave Radiative Flux Due to Dust** → `lwsrfcsdust`
+- **Clear-Sky Surface Shortwave Radiative Flux Due to Dust** → `swsrfcsdust`
+- **Cloud Condensation Nuclei Concentration at Liquid Cloud Top** → `ccn`
+- **Cloud Droplet Number Concentration of Cloud Tops** → `cldncl`
+- **Cloud Droplet Number Concentration of Convective Cloud Tops** → `ccldncl`
+- **Cloud Droplet Number Concentration of Stratiform Cloud Tops** → `scldncl`
+- **Cloud Ice Mixing Ratio** → `cldicemxrat27`
+- **Cloud Liquid Droplet Number Concentration** → `cdnc`
+- **Cloud Optical Depth** → `cod`
+- **Cloud Water Mixing Ratio** → `cldwatmxrat27`
+- **Cloud-Top Effective Droplet Radius** → `reffclwtop`
+- **Cloud-Top Effective Droplet Radius in Convective Cloud** → `reffcclwtop`
+- **Cloud-Top Effective Droplet Radius in Stratiform Cloud** → `reffsclwtop`
+- **CloudSat Radar Reflectivity CFAD** → `cfadDbze94`
+- **CO Volume Mixing Ratio** → `co`
+- **Column Integrated Cloud Droplet Number** → `cldnvi`
+- **Column Integrated Mass Flux** → `columnmassflux`
+- **Compressive Sea Ice Strength** → `sicompstren`
+- **Concentration of Dust** → `concdust`
+- **Condensed Water Path** → `clwvi`
+- **Convective Cloud Area Percentage** → `clc`
+- **Convective Cloud Cover Percentage** → `cltc`
+- **Convective Cloud Emissivity** → `demc`
+- **Convective Cloud Liquid Droplet Effective Radius** → `reffclwc`
+- **Convective Cloud Optical Depth** → `dtauc`
+- **Convective Condensed Water Path** → `clwvic`
+- **Convective Ice Water Path** → `clivic`
+- **Convective Mass Flux** → `mc`
+- **Convective Precipitation** → `prc`
+- **Convective Rainfall Flux** → `prcprof`
+- **Convective Rainfall Rate** → `prrc`
+- **Convective Snowfall Flux** → `prsnc`
+- **Convective Updraft Mass Flux** → `mcu`
+- **Coriolis Force Term in Force Balance (X-Component)** → `siforcecoriolx`
+- **Coriolis Force Term in Force Balance (Y-Component)** → `siforcecorioly`
+- **Daily Maximum Near-Surface Air Temperature** → `tasmax`
+- **Daily Maximum Near-Surface Air Temperature over Crop Tile** → `tasmaxCrop`
+- **Daily Maximum Near-Surface Relative Humidity** → `hursmax`
+- **Daily Maximum Near-Surface Wind Speed** → `sfcWindmax`
+- **Daily Maximum O3 Volume Mixing Ratio in Lowest Model Layer** → `sfo3max`
+- **Daily Minimum Near-Surface Air Temperature** → `tasmin`
+- **Daily Minimum Near-Surface Air Temperature over Crop Tile** → `tasminCrop`
+- **Daily Minimum Near-Surface Relative Humidity** → `hursmin`
+- **Daily Minimum Near-Surface Relative Humidity over Crop Tile** → `hursminCrop`
+- **Daily-Mean Near-Surface Wind Speed** → `sfcWind`
+- **Decomposition out of Product Pools to CO2 in Atmosphere as Carbon Mass Flux [kgC m-2 s-1]** → `fProductDecomp`
+- **Deep Convective Mass Flux** → `dmc`
+- **Deforested Biomass That Goes into Atmosphere as a Result of Anthropogenic Land-Use Change [kgC m-2 s-1]** → `fDeforestToAtmos`
+- **Deforested Biomass That Goes into Product Pool as a Result of Anthropogenic Land-Use Change** → `fDeforestToProduct`
+- **Deforested or Harvested Biomass as a Result of Anthropogenic Land-Use or Change** → `fNProduct`
+- **Delta CO2 Partial Pressure** → `dpco2`
+- **Delta O2 Partial Pressure** → `dpo2`
+- **Depth Average Potential Temperature of Upper 2000m** → `thetaot2000`
+- **Depth Average Potential Temperature of Upper 300m** → `thetaot300`
+- **Depth Average Potential Temperature of Upper 700m** → `thetaot700`
+- **Depth Below Geoid of Interfaces Between Ocean Layers** → `zhalfo`
+- **Depth Below Geoid of Ocean Layer** → `zfullo`
+- **Depth Integral of Product of Sea Water Density and Conservative Temperature** → `ocontempmint`
+- **Depth Integral of Product of Sea Water Density and Prognostic Salinity** → `somint`
+- **Depth of 20 degree Celsius Isotherm** → `t20d`
+- **Depth of Oxygen Minimum Concentration** → `zo2min`
+- **Depth to Soil Thaw** → `dmlt`
+- **Detrital Organic Carbon Concentration** → `detoc`
+- **Diffuse Surface Albedo for Each Band** → `albdiffbnd`
+- **Dimethyl Sulphide (DMS) Mole Fraction** → `dms`
+- **Direct Surface Albedo for Each Band** → `albdirbnd`
+- **Dissolved Ammonium Concentration** → `nh4`
+- **Dissolved Inorganic Carbon Concentration** → `dissic`
+- **Dissolved Inorganic Carbon Content** → `intdic`
+- **Dissolved Inorganic Carbon-13 Concentration** → `dissi13c`
+- **Dissolved Inorganic Carbon-14 Concentration** → `dissi14c`
+- **Dissolved Iron Concentration** → `dfe`
+- **Dissolved Nitrate Concentration** → `no3`
+- **Dissolved Organic Carbon Concentration** → `dissoc`
+- **Dissolved Organic Carbon Content** → `intdoc`
+- **Dissolved Oxygen Concentration** → `o2`
+- **Dissolved Oxygen Concentration at Saturation** → `o2sat`
+- **Divergence of the Sea-Ice Velocity Field** → `sidivvel`
+- **Downdraft Convective Mass Flux** → `mcd`
+- **Downward Flux of Aragonite** → `eparag100`
+- **Downward Flux of Aragonite** → `exparag`
+- **Downward Flux of Calcite** → `epcalc100`
+- **Downward Flux of Calcite** → `expcalc`
+- **Downward Flux of Particulate Iron** → `epfe100`
+- **Downward Flux of Particulate Nitrogen** → `epn100`
+- **Downward Flux of Particulate Organic Carbon** → `epc100`
+- **Downward Flux of Particulate Organic Carbon** → `expc`
+- **Downward Flux of Particulate Phosphorus** → `epp100`
+- **Downward Flux of Particulate Silicon** → `epsi100`
+- **Downward Heat Flux at Land Surface** → `hfdsl`
+- **Downward Heat Flux at Sea Water Surface** → `hfds`
+- **Downward Heat Flux at Snow Base** → `hfdsnb`
+- **Downward Heat Flux into Snow Where Land over Land** → `hfdsn`
+- **Downward Inorganic Carbon Flux at Ocean Bottom** → `fric`
+- **Downward Organic Carbon Flux at Ocean Bottom** → `froc`
+- **Downward Sea Ice Basal Salt Flux** → `sfdsi`
+- **Downwelling Clear-Sky Longwave Radiation** → `rldcs`
+- **Downwelling Clear-Sky Longwave Radiation 4XCO2 Atmosphere** → `rldcs4co2`
+- **Downwelling Clear-Sky Shortwave Radiation** → `rsdcs`
+- **Downwelling Clear-Sky Shortwave Radiation 4XCO2 Atmosphere** → `rsdcs4co2`
+- **Downwelling Clear-Sky Shortwave Radiation at Each Level for Each Band** → `rsdcsbnd`
+- **Downwelling Clear-Sky, Aerosol-Free Shortwave Radiation** → `rsdcsaf`
+- **Downwelling Clear-Sky, Aerosol-Free, Shortwave Radiation in Bands** → `rsdcsafbnd`
+- **Downwelling Longwave Flux over Sea Ice** → `sifllwdtop`
+- **Downwelling Longwave Radiation** → `rld`
+- **Downwelling Longwave Radiation 4XCO2 Atmosphere** → `rld4co2`
+- **Downwelling Shortwave Flux over Sea Ice** → `siflswdtop`
+- **Downwelling Shortwave Flux Under Sea Ice** → `siflswdbot`
+- **Downwelling Shortwave Radiation** → `rsd`
+- **Downwelling Shortwave Radiation 4XCO2 Atmosphere** → `rsd4co2`
+- **Downwelling Shortwave Radiation in Sea Water** → `rsdo`
+- **Dry and Wet Deposition of Reactive Nitrogen onto Land** → `fNdep`
+- **Dry Deposition Rate of Black Carbon Aerosol Mass** → `drybc`
+- **Dry Deposition Rate of Dry Aerosol Total Organic Matter** → `dryoa`
+- **Dry Deposition Rate of Dust** → `drydust`
+- **Dry Deposition Rate of NH3** → `drynh3`
+- **Dry Deposition Rate of NH4** → `drynh4`
+- **Dry Deposition Rate of NOy** → `drynoy`
+- **Dry Deposition Rate of O3** → `dryo3`
+- **Dry Deposition Rate of Sea-Salt Aerosol** → `dryss`
+- **Dry Deposition Rate of SO2** → `dryso2`
+- **Dry Deposition Rate of SO4** → `dryso4`
+- **Dust Aerosol Mass Mixing Ratio** → `mmrdust`
+- **Dust Optical Depth at 865nm** → `od865dust`
+- **Dust Optical Thickness at 550nm** → `od550dust`
+- **Eastward Acceleration Due to Non-Orographic Gravity Wave Drag** → `utendnogw`
+- **Eastward Acceleration Due to Non-Orographic Gravity Wave Drag** → `utendnogw27`
+- **Eastward Acceleration Due to Orographic Gravity Wave Drag** → `utendogw`
+- **Eastward Gravity Wave Drag** → `xgwdparam`
+- **Eastward Humidity Transport** → `uqint`
+- **Eastward Near-Surface Wind** → `uas`
+- **Eastward Surface Stress from Planetary Boundary Layer Scheme** → `tauupbl`
+- **Eastward Wind** → `ua`
+- **Eastward Wind** → `ua19`
+- **Eastward Wind** → `ua27`
+- **Eastward Wind** → `ua7h`
+- **Eastward Wind** → `ua8`
+- **Eastward Wind at 100m** → `ua100m`
+- **Eastward Wind at 10hPa** → `ua10`
+- **Eddy Diffusivity Coefficient for Temperature** → `edt`
+- **Eddy Viscosity Coefficient for Momentum** → `evu`
+- **Elemental Carbon Mass Mixing Ratio** → `mmrbc`
+- **Energy of Fusion** → `hfmlt`
+- **Energy of Sublimation** → `hfsbl`
+- **Evaporation from Canopy** → `evspsblveg`
+- **Evaporation Including Sublimation and Transpiration** → `evspsbl`
+- **Field Capacity** → `fldcapacity`
+- **Floating Ice Shelf Area Percentage** → `sftflf`
+- **Flux of Inorganic Carbon into Ocean Surface by Runoff** → `icfriver`
+- **Flux of Organic Carbon into Ocean Surface by Runoff** → `ocfriver`
+- **Formaldehyde Volume Mixing Ratio** → `hcho`
+- **Fraction of Rainfall on Snow** → `prrsn`
+- **Fraction of Snowfall (Including Hail and Graupel) on Snow** → `prsnsn`
+- **Fraction of Time Convection Occurs in Cell** → `ci`
+- **Fraction of Time Shallow Convection Occurs** → `sci`
+- **Fraction of Time Steps with Sea Ice** → `sitimefrac`
+- **Freshwater Flux from Sea Ice** → `siflfwbot`
+- **Freshwater Flux from Sea-Ice Surface** → `siflfwdrain`
+- **Frozen Water Content of Soil Layer** → `mrsfl`
+- **Gas-Phase Production Rate of SO4** → `chegpso4`
+- **Geopotential Height** → `zg`
+- **Geopotential Height** → `zg19`
+- **Geopotential Height** → `zg27`
+- **Geopotential Height** → `zg7h`
+- **Geopotential Height** → `zg8`
+- **Geopotential Height at 1000hPa** → `zg1000`
+- **Geopotential Height at 100hPa** → `zg100`
+- **Geopotential Height at 10hPa** → `zg10`
+- **Geopotential Height at 500hPa** → `zg500`
+- **Geothermal Heat Flux Beneath Land Ice** → `hfgeoubed`
+- **Global Average Sea Surface Salinity** → `sosga`
+- **Global Average Sea Surface Temperature** → `tosga`
+- **Global Average Sea Water Conservative Temperature** → `bigthetaoga`
+- **Global Average Sea Water Potential Temperature** → `thetaoga`
+- **Global Average Thermosteric Sea Level Change** → `zostoga`
+- **Global Mean Mole Fraction of CFC11** → `cfc11global`
+- **Global Mean Mole Fraction of CFC113** → `cfc113global`
+- **Global Mean Mole Fraction of CFC12** → `cfc12global`
+- **Global Mean Mole Fraction of CH4** → `ch4global`
+- **Global Mean Mole Fraction of CH4** → `ch4globalClim`
+- **Global Mean Mole Fraction of HCFC22** → `hcfc22global`
+- **Global Mean Mole Fraction of N2O** → `n2oglobal`
+- **Global Mean Mole Fraction of N2O** → `n2oglobalClim`
+- **Global Mean Sea Water Salinity** → `soga`
+- **Graupel Mixing Ratio** → `grplmxrat27`
+- **Grid Averaged Methane Consumption (Methanotrophy) from Wetlands** → `wetlandCH4cons`
+- **Grid Averaged Methane Emissions from Wetlands** → `wetlandCH4`
+- **Grid Averaged Methane Production (Methanogenesis) from Wetlands** → `wetlandCH4prod`
+- **Grid-Cell Area for Atmospheric Grid Variables** → `areacella`
+- **Grid-Cell Area for Ice Sheet Variables** → `areacellg`
+- **Grid-Cell Area for Ocean Variables** → `areacello`
+- **Grid-Cell Area for River Model Variables** → `areacellr`
+- **Gross Primary Production on Grass Tiles as Carbon Mass Flux [kgC m-2 s-1]** → `gppGrass`
+- **Gross Primary Production on Land-Use Tile as Carbon Mass Flux [kgC m-2 s-1]** → `gppLut`
+- **Gross Primary Production on Shrub Tiles as Carbon Mass Flux [kgC m-2 s-1]** → `gppShrub`
+- **Gross Primary Production on Tree Tiles as Carbon Mass Flux [kgC m-2 s-1]** → `gppTree`
+- **Grounded Ice Sheet Area Percentage** → `sftgrf`
+- **Groundwater Recharge from Soil Layer** → `qgwr`
+- **Harvested Biomass That Goes into Product Pool** → `fHarvestToProduct`
+- **Harvested Biomass That Goes Straight into Atmosphere as Carbon Mass Flux [kgC m-2 s-1]** → `fHarvestToAtmos`
+- **HCl Volume Mixing Ratio** → `hcl`
+- **Heat Flux Correction** → `hfcorr`
+- **Heat Flux into Sea Water Due to Frazil Ice Formation** → `hfsifrazil`
+- **Heat Flux into Sea Water Due to Frazil Ice Formation** → `hfsifrazil2d`
+- **Heat Flux into Sea Water Due to Iceberg Thermodynamics** → `hfibthermds`
+- **Heat Flux into Sea Water Due to Iceberg Thermodynamics** → `hfibthermds2d`
+- **Heat Flux into Sea Water Due to Snow Thermodynamics** → `hfsnthermds`
+- **Heat Flux into Sea Water Due to Snow Thermodynamics** → `hfsnthermds2d`
+- **Heat Transferred to Snowpack by Rainfall** → `hfrs`
+- **Height of Boundary Layer** → `zmla`
+- **Height of Crops** → `vegHeightCrop`
+- **Height of Grass** → `vegHeightGrass`
+- **Height of Pastures** → `vegHeightPasture`
+- **Height of Shrubs** → `vegHeightShrub`
+- **Height of the Vegetation Canopy** → `vegHeight`
+- **Height of Trees** → `vegHeightTree`
+- **Heterotrophic Respiration on Grass Tiles as Carbon Mass Flux [kgC m-2 s-1]** → `rhGrass`
+- **Heterotrophic Respiration on Land-Use Tile as Carbon Mass Flux [kgC m-2 s-1]** → `rhLut`
+- **Heterotrophic Respiration on Shrub Tiles as Carbon Mass Flux [kgC m-2 s-1]** → `rhShrub`
+- **Heterotrophic Respiration on Tree Tiles as Carbon Mass Flux [kgC m-2 s-1]** → `rhTree`
+- **HNO3 Volume Mixing Ratio** → `hno3`
+- **HO2 Volume Mixing Ratio** → `ho2`
+- **Hydrometeor Effective Radius of Convective Cloud Ice** → `reffclic`
+- **Hydrometeor Effective Radius of Convective Rainfall** → `reffrainc`
+- **Hydrometeor Effective Radius of Convective Snowfall** → `reffsnowc`
+- **Hydrometeor Effective Radius of Stratiform Cloud Ice** → `reffclis`
+- **Hydrometeor Effective Radius of Stratiform Graupel** → `reffgrpls`
+- **Hydrometeor Effective Radius of Stratiform Rainfall** → `reffrains`
+- **Hydrometeor Effective Radius of Stratiform Snowfall** → `reffsnows`
+- **Ice Crystal Number Concentration of Cloud Tops** → `cldnci`
+- **Ice Sheet Mass** → `lim`
+- **Ice Sheet Mass That Does not Displace Sea Water** → `limnsw`
+- **Ice Sheet Near-Surface Air Temperature** → `tasIs`
+- **Ice Sheet Rainfall Rate** → `prraIs`
+- **Ice Sheet Snow Cover Percentage** → `sncIs`
+- **Ice Sheet Snow Internal Temperature** → `tsnIs`
+- **Ice Sheet Snowfall Flux** → `prsnIs`
+- **Ice Sheet Surface Altitude** → `orogIs`
+- **Ice Sheet Surface Downwelling Longwave Radiation** → `rldsIs`
+- **Ice Sheet Surface Downwelling Shortwave Radiation** → `rsdsIs`
+- **Ice Sheet Surface Ice Melt Flux** → `icemIs`
+- **Ice Sheet Surface Mass Balance Flux** → `acabfIs`
+- **Ice Sheet Surface Snow and Ice Melt Flux** → `snicemIs`
+- **Ice Sheet Surface Snow and Ice Refreeze Flux** → `snicefreezIs`
+- **Ice Sheet Surface Snow and Ice Sublimation Flux** → `sblIs`
+- **Ice Sheet Surface Snow Melt** → `snmIs`
+- **Ice Sheet Surface Temperature** → `tsIs`
+- **Ice Sheet Surface Upward Latent Heat Flux** → `hflsIs`
+- **Ice Sheet Surface Upward Sensible Heat Flux** → `hfssIs`
+- **Ice Sheet Surface Upwelling Longwave Radiation** → `rlusIs`
+- **Ice Sheet Surface Upwelling Shortwave Radiation** → `rsusIs`
+- **Ice Sheet Temperature at Top of Ice Sheet Model** → `litemptopIs`
+- **Ice Sheet Thickness** → `lithk`
+- **Ice Sheet Total Runoff** → `mrroIs`
+- **Ice Water Path** → `clivi`
+- **Integral with Respect to Depth of Product of Sea Water Density and Potential Temperature** → `opottempmint`
+- **Interception Evaporation** → `ec`
+- **Internal Stress Term in Force Balance (X-Component)** → `siforceintstrx`
+- **Internal Stress Term in Force Balance (Y-Component)** → `siforceintstry`
+- **Iron Limitation of Calcareous Phytoplankton** → `limfecalc`
+- **Iron Limitation of Diatoms** → `limfediat`
+- **Iron Limitation of Diazotrophs** → `limfediaz`
+- **Iron Limitation of Other Phytoplankton** → `limfemisc`
+- **Iron Limitation of Picophytoplankton** → `limfepico`
+- **Iron Loss to Sediments** → `frfe`
+- **Iron Production** → `intpbfe`
+- **Irradiance Limitation of Calcareous Phytoplankton** → `limirrcalc`
+- **Irradiance Limitation of Diatoms** → `limirrdiat`
+- **Irradiance Limitation of Diazotrophs** → `limirrdiaz`
+- **Irradiance Limitation of Other Phytoplankton** → `limirrmisc`
+- **Irradiance Limitation of Picophytoplankton** → `limirrpico`
+- **Irrigation Flux Including any Irrigation for Crops, Trees, Pasture, or Urban Lawns** → `irrLut`
+- **ISCCP Cloud Area Percentage** → `clisccp`
+- **ISCCP Mean Cloud Albedo** → `albisccp`
+- **ISCCP Mean Cloud Top Pressure** → `pctisccp`
+- **ISCCP Total Cloud Cover Percentage** → `cltisccp`
+- **Isoprene Volume Mixing Ratio** → `isop`
+- **Isotopic Ratio of Deuterium in Sea Water** → `sw2H`
+- **Isotopic Ratio of Oxygen-17 in Sea Water** → `sw17O`
+- **Isotopic Ratio of Oxygen-18 in Sea Water** → `sw18O`
+- **Land Ice Area Percentage** → `sftgif`
+- **Land Ice Basal Drag** → `strbasemag`
+- **Land Ice Calving Flux** → `licalvf`
+- **Land Ice Runoff Flux** → `mrroLi`
+- **Land Ice Vertical Front Mass Balance Flux** → `lifmassbf`
+- **Land Surface Temperature** → `tsland`
+- **Latent Heat Flux on Land-Use Tile** → `hflsLut`
+- **Lateral Sea Ice Melt Rate** → `sidmasslat`
+- **Lateral Transfer of Carbon out of Grid Cell That Eventually Goes into Ocean** → `fCLandToOcean`
+- **Lateral Transfer of Nitrogen out of Grid Cell That Eventually Goes into Ocean** → `fNLandToOcean`
+- **Layer-Integrated Lightning Production of NOx** → `emilnox`
+- **Leaf Area Index** → `lai`
+- **Leaf Area Index on Land-Use Tile** → `laiLut`
+- **Lightning Flash Rate** → `flashrate`
+- **Liquid Water Content of Permafrost Layer** → `pflw`
+- **Liquid Water Content of Snow Layer** → `lwsnl`
+- **Liquid Water Content of Soil Layer** → `mrsll`
+- **Liquid Water Path** → `lwp`
+- **Load of Black Carbon Aerosol** → `loadbc`
+- **Load of Dry Aerosol Organic Matter** → `loadoa`
+- **Load of Dry Aerosol Primary Organic Matter** → `loadpoa`
+- **Load of Dry Aerosol Secondary Organic Matter** → `loadsoa`
+- **Load of Dust** → `loaddust`
+- **Load of NH4** → `loadnh4`
+- **Load of NO3** → `loadno3`
+- **Load of Sea-Salt Aerosol** → `loadss`
+- **Load of SO4** → `loadso4`
+- **Longwave Flux Due to Volcanic Aerosols at the Surface** → `lwsffluxaero`
+- **Mass Concentration of Calcareous Phytoplankton Expressed as Chlorophyll in Sea Water** → `chlcalc`
+- **Mass Concentration of Diatoms Expressed as Chlorophyll in Sea Water** → `chldiat`
+- **Mass Concentration of Diazotrophs Expressed as Chlorophyll in Sea Water** → `chldiaz`
+- **Mass Concentration of Other Phytoplankton Expressed as Chlorophyll in Sea Water** → `chlmisc`
+- **Mass Concentration of Picophytoplankton Expressed as Chlorophyll in Sea Water** → `chlpico`
+- **Mass Concentration of Total Phytoplankton Expressed as Chlorophyll in Sea Water** → `chl`
+- **Mass Fraction of Cloud Ice** → `cli`
+- **Mass Fraction of Cloud Liquid Water** → `clw`
+- **Mass Fraction of Convective Cloud Ice** → `clic`
+- **Mass Fraction of Convective Cloud Liquid Water** → `clwc`
+- **Mass Fraction of Rain in Air** → `rainmxrat27`
+- **Mass Fraction of Snow in Air** → `snowmxrat27`
+- **Mass Fraction of Stratiform Cloud Ice** → `clis`
+- **Mass Fraction of Stratiform Cloud Liquid Water** → `clws`
+- **Mass Fraction of Water** → `h2o`
+- **Mass of 13C in All Terrestrial Carbon Pools** → `c13Land`
+- **Mass of 13C in Litter Pool** → `c13Litter`
+- **Mass of 13C in Soil Pool** → `c13Soil`
+- **Mass of 13C in Vegetation** → `c13Veg`
+- **Mass of 14C in All Terrestrial Carbon Pools** → `c14Land`
+- **Mass of 14C in Litter Pool** → `c14Litter`
+- **Mass of 14C in Soil Pool** → `c14Soil`
+- **Mass of 14C in Vegetation** → `c14Veg`
+- **Mass of Salt in Sea Ice per Area** → `sisaltmass`
+- **Mass of Water Containing Deuterium (1H 2H O) in Layer** → `prw2H`
+- **Mass of Water Vapor Containing Oxygen-17 (H2 17O) in Layer** → `prw17O`
+- **Mass of Water Vapor Containing Oxygen-18 (H2 18O) in Layer** → `prw18O`
+- **Maximum Hourly Precipitation Rate** → `prhmax`
+- **Maximum Ocean Mixed Layer Thickness Defined by Sigma T** → `mlotstmax`
+- **Maximum PBL Height** → `maxpblz`
+- **Maximum Root Depth** → `rootd`
+- **Maximum Shear of Sea-Ice Velocity Field** → `sishevel`
+- **Maximum Shear Stress in Sea Ice** → `sistremax`
+- **Maximum Wind Speed of Gust at 100m** → `wsgmax100m`
+- **Maximum Wind Speed of Gust at 10m** → `wsgmax10m`
+- **Mean Age of Snow** → `agesno`
+- **Mean Age of Stratospheric Air** → `meanage`
+- **Mean Daily Maximum Ocean Mixed Layer Thickness Defined by Mixing Scheme** → `omldamax`
+- **Mean-Squared Air Temperature** → `t2`
+- **Mean-Squared Eastward Wind Speed** → `u2`
+- **Mean-Squared Northward Wind Speed** → `v2`
+- **Mean-Squared Vertical Velocity (Omega)** → `wap2`
+- **Meltpond Mass per Unit Area (as Depth)** → `simpmass`
+- **Mineral Ammonium in the Soil** → `nMineralNH4`
+- **Mineral Nitrate in the Soil** → `nMineralNO3`
+- **Mineral Nitrogen in the Soil** → `nMineral`
+- **Minimum Ocean Mixed Layer Thickness Defined by Sigma T** → `mlotstmin`
+- **Minimum PBL Height** → `minpblz`
+- **MODIS Ice Cloud Area Percentage** → `climodis`
+- **MODIS Joint Distribution of Optical Thickness and Particle Size, Ice** → `jpdftaureicemodis`
+- **MODIS Liquid Cloud Percentage** → `clwmodis`
+- **MODIS Optical Thickness-Particle Size Joint Distribution, Liquid** → `jpdftaureliqmodis`
+- **MODIS Total Cloud Cover Percentage** → `cltmodis`
+- **Moisture in Upper Portion of Soil Column** → `mrsos`
+- **Moisture in Upper Portion of Soil Column of Land-Use Tile** → `mrsosLut`
+- **Mole Concentration of Calcareous Phytoplankton Expressed as Carbon in Sea Water** → `phycalc`
+- **Mole Concentration of Carbonate Ion in Equilibrium with Pure Aragonite in Sea Water** → `co3satarag`
+- **Mole Concentration of Carbonate Ion in Equilibrium with Pure Calcite in Sea Water** → `co3satcalc`
+- **Mole Concentration of CFC11 in Sea Water** → `cfc11`
+- **Mole Concentration of CFC12 in Sea Water** → `cfc12`
+- **Mole Concentration of Diatoms Expressed as Carbon in Sea Water** → `phydiat`
+- **Mole Concentration of Diazotrophs Expressed as Carbon in Sea Water** → `phydiaz`
+- **Mole Concentration of Dimethyl Sulphide in Sea Water** → `dmso`
+- **Mole Concentration of Mesozooplankton Expressed as Carbon in Sea Water** → `zmeso`
+- **Mole Concentration of Microzooplankton Expressed as Carbon in Sea Water** → `zmicro`
+- **Mole Concentration of Miscellaneous Phytoplankton Expressed as Carbon in Sea Water** → `phymisc`
+- **Mole Concentration of Other Zooplankton Expressed as Carbon in Sea Water** → `zmisc`
+- **Mole Concentration of Particulate Organic Matter Expressed as Iron in Sea Water** → `bfe`
+- **Mole Concentration of Particulate Organic Matter Expressed as Nitrogen in Sea Water** → `pon`
+- **Mole Concentration of Particulate Organic Matter Expressed as Phosphorus in Sea Water** → `pop`
+- **Mole Concentration of Particulate Organic Matter Expressed as Silicon in Sea Water** → `bsi`
+- **Mole Concentration of Picophytoplankton Expressed as Carbon in Sea Water** → `phypico`
+- **Mole Concentration of SF6 in Sea Water** → `sf6`
+- **Mole Concentration of Total Phytoplankton Expressed as Iron in Sea Water** → `phyfe`
+- **Mole Concentration of Total Phytoplankton Expressed as Nitrogen in Sea Water** → `phyn`
+- **Mole Concentration of Total Phytoplankton Expressed as Phosphorus in Sea Water** → `phyp`
+- **Mole Concentration of Total Phytoplankton Expressed as Silicon in Sea Water** → `physi`
+- **Mole Fraction of CH4** → `ch4`
+- **Mole Fraction of CH4** → `ch4Clim`
+- **Mole Fraction of CO2** → `co2`
+- **Mole Fraction of CO2** → `co2Clim`
+- **Mole Fraction of N2O** → `n2o`
+- **Mole Fraction of N2O** → `n2oClim`
+- **Mole Fraction of O3** → `o3`
+- **Mole Fraction of O3** → `o3Clim`
+- **Mole Fraction of Odd Oxygen (O, O3 and O1D)** → `vmrox`
+- **Momentum Flux** → `tau`
+- **Monthly Loss of Atmospheric Carbon Monoxide** → `lossco`
+- **Monthly Loss of Atmospheric Methane** → `lossch4`
+- **Monthly Loss of Atmospheric Nitrous Oxide** → `lossn2o`
+- **Natural Carbonate Ion Concentration** → `co3nat`
+- **Natural Delta CO2 Partial Pressure ** → `dpco2nat`
+- **Natural Dissolved Inorganic Carbon Concentration** → `dissicnat`
+- **Natural Grass Area Percentage** → `grassFrac`
+- **Natural pH** → `phnat`
+- **Natural Surface Aqueous Partial Pressure of CO2** → `spco2nat`
+- **Natural Total Alkalinity** → `talknat`
+- **Near-Surface Air Temperature** → `tas`
+- **Near-Surface Air Temperature on Land Use Tile** → `tasLut`
+- **Near-Surface Relative Humidity** → `hurs`
+- **Near-Surface Specific Humidity** → `huss`
+- **Near-Surface Specific Humidity on Land-Use Tile** → `hussLut`
+- **Needleleaf Deciduous Tree Area Percentage** → `treeFracNdlDcd`
+- **Needleleaf Evergreen Tree Area Percentage** → `treeFracNdlEvg`
+- **Net Carbon Mass Flux from Wood and Agricultural Product Pools on Land Use Tile into Atmosphere [kgC m-2 s-1]** → `fProductDecompLut`
+- **Net Carbon Mass Flux into Atmosphere Due to Land-Use Change [kgC m-2 s-1]** → `fLuc`
+- **Net Carbon Mass Flux into Land-Use Tile [kgC m-2 s-1]** → `necbLut`
+- **Net Carbon Mass Flux out of Atmosphere Due to Net Ecosystem Productivity on Land [kgC m-2 s-1]** → `nep`
+- **Net Conductive Heat Flux in Ice at the Surface** → `siflcondtop`
+- **Net Conductive Heat Fluxes in Ice at the Bottom** → `siflcondbot`
+- **Net Downward Radiative Flux at Top of Model** → `rtmt`
+- **Net Downward Shortwave Radiation at Sea Water Surface** → `rsntds`
+- **Net Flux of CO2 Between Atmosphere and Land (Positive into Land) as a Result of All Processes [kgC m-2 s-1]** → `netAtmosLandCO2Flux`
+- **Net Latent Heat Flux over Sea Ice** → `sifllatstop`
+- **Net Longwave Surface Radiation** → `rls`
+- **Net Mass Flux of 13C Between Atmosphere and Land (Positive into Land) as a Result of All Processes [kgC m-2 s-1]** → `netAtmosLandC13Flux`
+- **Net Mass Flux of 14C Between Atmosphere and Land (Positive into Land) as a Result of All Processes [kgC m-2 s-1]** → `netAtmosLandC14Flux`
+- **Net Nitrogen Release from Soil and Litter as the Outcome of Nitrogen Immobilisation and Gross Mineralisation** → `fNnetmin`
+- **Net Primary Mole Productivity of Carbon by Calcareous Phytoplankton** → `intppcalc`
+- **Net Primary Mole Productivity of Carbon by Calcareous Phytoplankton** → `ppcalc`
+- **Net Primary Mole Productivity of Carbon by Diazotrophs** → `intppdiaz`
+- **Net Primary Mole Productivity of Carbon by Diazotrophs** → `ppdiaz`
+- **Net Primary Mole Productivity of Carbon by Picophytoplankton** → `intpppico`
+- **Net Primary Mole Productivity of Carbon by Picophytoplankton** → `pppico`
+- **Net Primary Organic Carbon Production by Diatoms** → `intppdiat`
+- **Net Primary Organic Carbon Production by Diatoms** → `ppdiat`
+- **Net Primary Organic Carbon Production by Other Phytoplankton** → `intppmisc`
+- **Net Primary Organic Carbon Production by Other Phytoplankton** → `ppmisc`
+- **Net Primary Production Allocated to Leaves as Carbon Mass Flux [kgC m-2 s-1]** → `nppLeaf`
+- **Net Primary Production Allocated to Other Pools (not Leaves Stem or Roots) as Carbon Mass Flux [kgC m-2 s-1]** → `nppOther`
+- **Net Primary Production Allocated to Roots as Carbon Mass Flux [kgC m-2 s-1]** → `nppRoot`
+- **Net Primary Production Allocated to Stem as Carbon Mass Flux [kgC m-2 s-1]** → `nppStem`
+- **Net Primary Production Allocated to Wood as Carbon Mass Flux [kgC m-2 s-1]** → `nppWood`
+- **Net Primary Production on Grass Tiles as Carbon Mass Flux [kgC m-2 s-1]** → `nppGrass`
+- **Net Primary Production on Land as Carbon Mass Flux [kgC m-2 s-1]** → `npp`
+- **Net Primary Production on Land-Use Tile as Carbon Mass Flux [kgC m-2 s-1]** → `nppLut`
+- **Net Primary Production on Shrub Tiles as Carbon Mass Flux [kgC m-2 s-1]** → `nppShrub`
+- **Net Primary Production on Tree Tiles as Carbon Mass Flux [kgC m-2 s-1]** → `nppTree`
+- **Net Rate of Absorption of Shortwave Energy in Ocean Layer** → `rsdoabsorb`
+- **Net Shortwave Surface Radiation** → `rss`
+- **Net Upward Sensible Heat Flux over Sea Ice** → `siflsenstop`
+- **Net Upward Sensible Heat Flux Under Sea Ice** → `siflsensupbot`
+- **NH4 Mass Mixing Ratio** → `mmrnh4`
+- **Nitrate Aerosol Optical Depth at 550nm** → `od550no3`
+- **Nitrogen Fixation Rate in Ocean** → `intpn2`
+- **Nitrogen Limitation of Calcareous Phytoplankton** → `limncalc`
+- **Nitrogen Limitation of Diatoms** → `limndiat`
+- **Nitrogen Limitation of Diazotrophs** → `limndiaz`
+- **Nitrogen Limitation of Other Phytoplankton** → `limnmisc`
+- **Nitrogen Limitation of Picophytoplankton** → `limnpico`
+- **Nitrogen Loss to Sediments and Through Denitrification** → `frn`
+- **Nitrogen Mass Flux out of Land Due to any Human Activity** → `fNAnthDisturb`
+- **Nitrogen Mass in Above-Ground Litter (non CWD)** → `nLitterSurf`
+- **Nitrogen Mass in Below-Ground Litter (non CWD)** → `nLitterSubSurf`
+- **Nitrogen Mass in Coarse Woody Debris** → `nLitterCwd`
+- **Nitrogen Mass in Leaves** → `nLeaf`
+- **Nitrogen Mass in Litter Pool** → `nLitter`
+- **Nitrogen Mass in Products of Land-Use Change** → `nProduct`
+- **Nitrogen Mass in Roots** → `nRoot`
+- **Nitrogen Mass in Soil Pool** → `nSoil`
+- **Nitrogen Mass in Stem** → `nStem`
+- **Nitrogen Mass in Vegetation** → `nVeg`
+- **Nitrogen Mass in Vegetation Components Other than Leaves, Stem and Root** → `nOther`
+- **Nitrogen Production** → `intpbn`
+- **NO Volume Mixing Ratio** → `no`
+- **NO2 Volume Mixing Ratio** → `no2`
+- **NO2 Volume Mixing Ratio in Lowest Model Layer** → `sfno2`
+- **NO3 Aerosol Mass Mixing Ratio** → `mmrno3`
+- **Non-Biogenic Iron Scavenging** → `fescav`
+- **Non-Woody Vegetation Percentage Cover** → `nwdFracLut`
+- **Northern Hemisphere Tracer Lifetime** → `aoanh`
+- **Northward Acceleration Due to Non-Orographic Gravity Wave Drag** → `vtendnogw`
+- **Northward Acceleration Due to Non-Orographic Gravity Wave Drag** → `vtendnogw27`
+- **Northward Acceleration Due to Orographic Gravity Wave Drag** → `vtendogw`
+- **Northward Component of the Eliassen-Palm Flux** → `epfy`
+- **Northward Eddy Temperature Flux** → `vt100`
+- **Northward Gravity Wave Drag** → `ygwdparam`
+- **Northward Humidity Transport** → `vqint`
+- **Northward Near-Surface Wind** → `vas`
+- **Northward Ocean Heat Transport** → `hfbasin`
+- **Northward Ocean Heat Transport Due to Gyre** → `htovgyre`
+- **Northward Ocean Heat Transport Due to Overturning** → `htovovrt`
+- **Northward Ocean Heat Transport Due to Parameterized Eddy Advection** → `hfbasinpadv`
+- **Northward Ocean Heat Transport Due to Parameterized Mesoscale Advection** → `hfbasinpmadv`
+- **Northward Ocean Heat Transport Due to Parameterized Mesoscale Diffusion** → `hfbasinpmdiff`
+- **Northward Ocean Heat Transport Due to Parameterized Submesoscale Advection** → `hfbasinpsmadv`
+- **Northward Ocean Salt Transport** → `sltbasin`
+- **Northward Ocean Salt Transport Due to Gyre** → `sltovgyre`
+- **Northward Ocean Salt Transport Due to Overturning** → `sltovovrt`
+- **Northward Surface Stress from Planetary Boundary Layer Scheme** → `tauvpbl`
+- **Northward Wind** → `va`
+- **Northward Wind** → `va19`
+- **Northward Wind** → `va27`
+- **Northward Wind** → `va7h`
+- **Northward Wind** → `va8`
+- **Northward Wind at 100m** → `va100m`
+- **Nudging Increment of Water in Snow** → `nudgincswe`
+- **Nudging Increment of Water in Soil Moisture** → `nudgincsm`
+- **Number Concentration Coarse Mode Aerosol** → `conccmcn`
+- **Number Concentration of Nucleation Mode Aerosol** → `concnmcn`
+- **O3 Destruction Rate** → `o3loss`
+- **O3 Production Rate** → `o3prod`
+- **O3 Volume Mixing Ratio in Lowest Model Layer** → `sfo3`
+- **Ocean Barotropic Mass Streamfunction** → `msftbarot`
+- **Ocean Drag Coefficient** → `sidragbot`
+- **Ocean Grid-Cell Mass per Area** → `masscello`
+- **Ocean Grid-Cell Volume** → `volcello`
+- **Ocean Heat X Transport** → `hfx`
+- **Ocean Heat Y Transport** → `hfy`
+- **Ocean Kinetic Energy Dissipation per Unit Area Due to Vertical Friction** → `dispkevfo`
+- **Ocean Kinetic Energy Dissipation per Unit Area Due to XY Friction** → `dispkexyfo`
+- **Ocean Kinetic Energy Dissipation per Unit Area Due to XY Friction** → `dispkexyfo2d`
+- **Ocean Mass X Transport** → `umo`
+- **Ocean Mass Y Transport** → `vmo`
+- **Ocean Meridional Overturning Mass Streamfunction** → `msftmrho`
+- **Ocean Meridional Overturning Mass Streamfunction** → `msftmz`
+- **Ocean Meridional Overturning Mass Streamfunction Due to Parameterized Mesoscale Advection** → `msftmrhompa`
+- **Ocean Meridional Overturning Mass Streamfunction Due to Parameterized Mesoscale Advection** → `msftmzmpa`
+- **Ocean Meridional Overturning Mass Streamfunction Due to Parameterized Submesoscale Advection** → `msftmzsmpa`
+- **Ocean Mixed Layer Thickness Defined by Sigma T** → `mlotst`
+- **Ocean Model Cell Thickness** → `thkcello`
+- **Ocean Momentum XY Biharmonic Diffusivity** → `difmxybo`
+- **Ocean Momentum XY Biharmonic Diffusivity** → `difmxybo2d`
+- **Ocean Momentum XY Laplacian Diffusivity** → `difmxylo`
+- **Ocean Momentum XY Laplacian Diffusivity** → `difmxylo2d`
+- **Ocean Tracer Bolus Biharmonic Diffusivity** → `diftrbbo`
+- **Ocean Tracer Bolus Biharmonic Diffusivity** → `diftrbbo2d`
+- **Ocean Tracer Diffusivity Due to Parameterized Mesoscale Advection** → `diftrblo`
+- **Ocean Tracer Diffusivity Due to Parameterized Mesoscale Advection** → `diftrblo2d`
+- **Ocean Tracer Epineutral Biharmonic Diffusivity** → `diftrebo`
+- **Ocean Tracer Epineutral Biharmonic Diffusivity** → `diftrebo2d`
+- **Ocean Tracer Epineutral Laplacian Diffusivity** → `diftrelo`
+- **Ocean Tracer Epineutral Laplacian Diffusivity** → `diftrelo2d`
+- **Ocean Tracer XY Biharmonic Diffusivity** → `diftrxybo`
+- **Ocean Tracer XY Biharmonic Diffusivity** → `diftrxybo2d`
+- **Ocean Tracer XY Laplacian Diffusivity** → `diftrxylo`
+- **Ocean Tracer XY Laplacian Diffusivity** → `diftrxylo2d`
+- **Ocean Vertical Heat Diffusivity** → `difvho`
+- **Ocean Vertical Momentum Diffusivity** → `difvmo`
+- **Ocean Vertical Momentum Diffusivity Due to Background** → `difvmbo`
+- **Ocean Vertical Momentum Diffusivity Due to Form Drag** → `difvmfdo`
+- **Ocean Vertical Momentum Diffusivity Due to Tides** → `difvmto`
+- **Ocean Vertical Salt Diffusivity** → `difvso`
+- **Ocean Vertical Tracer Diffusivity Due to Background** → `difvtrbo`
+- **Ocean Vertical Tracer Diffusivity Due to Tides** → `difvtrto`
+- **Ocean Y Overturning Mass Streamfunction** → `msftyrho`
+- **Ocean Y Overturning Mass Streamfunction** → `msftyz`
+- **Ocean Y Overturning Mass Streamfunction Due to Parameterized Mesoscale Advection** → `msftyrhompa`
+- **Ocean Y Overturning Mass Streamfunction Due to Parameterized Mesoscale Advection** → `msftyzmpa`
+- **Ocean Y Overturning Mass Streamfunction Due to Parameterized Submesoscale Advection** → `msftyzsmpa`
+- **OH Volume Mixing Ratio** → `oh`
+- **Omega (=dp/dt)** → `wap`
+- **Omega (=dp/dt)** → `wap19`
+- **Omega (=dp/dt)** → `wap27`
+- **Omega (=dp/dt)** → `wap4`
+- **Omega (=dp/dt)** → `wap7h`
+- **Omega (=dp/dt)** → `wap8`
+- **Open Water Evaporation** → `eow`
+- **Optical Thickness at 443nm Dust** → `od443dust`
+- **Oxygen Minimum Concentration** → `o2min`
+- **PAN Volume Mixing Ratio** → `pan`
+- **PARASOL Reflectance** → `parasolRefl`
+- **Particulate Organic Aerosol Optical Depth at 550nm** → `od550soa`
+- **Particulate Organic Carbon Content** → `intpoc`
+- **Particulate Source of Dissolved Iron** → `fediss`
+- **Percentage Cloud Cover** → `cl`
+- **Percentage Cloud Cover as Calculated by the MISR Simulator (Including Error Flag)** → `clmisr`
+- **Percentage Cover by C3 Crops** → `cropFracC3`
+- **Percentage Cover by C3 Plant Functional Type** → `c3PftFrac`
+- **Percentage Cover by C4 Crops** → `cropFracC4`
+- **Percentage Cover by C4 Plant Functional Type** → `c4PftFrac`
+- **Percentage Cover by Primary Deciduous Tree** → `treeFracPrimDec`
+- **Percentage Cover by Primary Evergreen Trees** → `treeFracPrimEver`
+- **Percentage Cover by Secondary Deciduous Trees** → `treeFracSecDec`
+- **Percentage Cover by Secondary Evergreen Trees** → `treeFracSecEver`
+- **Percentage Cover by Shrub** → `shrubFrac`
+- **Percentage Cover of Sea Ice by Meltpond** → `simpconc`
+- **Percentage Cover of Sea Ice by Ridging** → `sirdgconc`
+- **Percentage Cover of Stratiform Cloud** → `cls`
+- **Percentage Crop Cover** → `cropFrac`
+- **Percentage of Area by Vegetation or Land-Cover Category** → `landCoverFrac`
+- **Percentage of Entire Grid Cell That Is Covered by Burnt Vegetation (All Classes)** → `burntFractionAll`
+- **Percentage of Grid Cell for Each Land-Use Tile** → `fracLut`
+- **Percentage of Grid Cell That Is Land but neither Vegetation Covered nor Bare Soil** → `residualFrac`
+- **Percentage of Land Which Is Anthropogenic Pasture** → `pastureFrac`
+- **Percentage of the Grid Cell Occupied by Land (Including Lakes)** → `sftlf`
+- **Permafrost Layer Thickness** → `tpf`
+- **pH** → `ph`
+- **Phosphorus Production** → `intpbp`
+- **Photolysis Rate of Diatomic Molecular Oxygen** → `jo2`
+- **Photolysis Rate of NO2** → `jno2`
+- **Photolysis Rate of Ozone (O3)** → `jo3`
+- **Photolysis Rate of Ozone (O3) to Excited Atomic Oxygen (the Singlet D State, O1D)** → `photo1d`
+- **Phytoplankton Carbon Concentration** → `phyc`
+- **Phytotoxic Ozone Dose** → `pod0`
+- **PM1.0 Mass Mixing Ratio** → `mmrpm1`
+- **PM10 Mass Mixing Ratio** → `mmrpm10`
+- **PM2.5 Mass Mixing Ratio** → `mmrpm2p5`
+- **PM2.5 Mass Mixing Ratio in Lowest Model Layer** → `sfpm25`
+- **Potential Evapotranspiration** → `evspsblpot`
+- **Precipitation** → `pr`
+- **Precipitation Flux from Shallow Convection** → `prcsh`
+- **Precipitation Flux of Snow and Ice Containing Deuterium (1H 2H O)** → `prsn2h`
+- **Precipitation Flux of Snow and Ice Containing Oxygen-17 (H2 17O)** → `prsn17O`
+- **Precipitation Flux of Snow and Ice Containing Oxygen-18 (H2 18O)** → `prsn18O`
+- **Precipitation Flux of Water Containing Deuterium (1H 2H O)** → `pr2h`
+- **Precipitation Flux of Water Containing Oxygen-17 (H2 17O)** → `pr17O`
+- **Precipitation Flux of Water Containing Oxygen-18 (H2 18O)** → `pr18O`
+- **Precipitation onto Canopy** → `prveg`
+- **Precipitation over Crop Tile** → `prCrop`
+- **Pressure at Model Full-Levels** → `pfull`
+- **Pressure on Model Half-Levels** → `phalf`
+- **Pressure Tendency** → `wap500`
+- **Primary Carbon Production by Phytoplankton** → `pp`
+- **Primary Carbon Production by Phytoplankton** → `ppos`
+- **Primary Carbon Production by Phytoplankton Due to Nitrate Uptake Alone** → `pnitrate`
+- **Primary Emission and Chemical Production of Dry Aerosol Organic Matter** → `emioa`
+- **Primary Organic Carbon Production by All Types of Phytoplankton** → `intpp`
+- **Primary Organic Carbon Production by Phytoplankton Based on Nitrate Uptake Alone** → `intppnitrate`
+- **Product of Air Temperature and Eastward Wind** → `ut`
+- **Product of Air Temperature and Northward Wind** → `vt`
+- **Product of Air Temperature and Omega** → `twap`
+- **Product of Eastward Wind and Northward Wind** → `uv`
+- **Product of Eastward Wind and Omega** → `uwap`
+- **Product of Northward Wind and Omega** → `vwap`
+- **Rainfall Flux over Land Ice** → `prra`
+- **Rainfall Rate over Sea Ice** → `sipr`
+- **Rate of Change of Alkalinity Due to Biological Activity** → `bddtalk`
+- **Rate of Change of Biological Alkalinity Due to Biological Activity** → `fbddtalk`
+- **Rate of Change of Dissolved Inorganic Carbon Due to Biological Activity** → `bddtdic`
+- **Rate of Change of Dissolved Inorganic Carbon Due to Biological Activity** → `fbddtdic`
+- **Rate of Change of Dissolved Inorganic Iron Due to Biological Activity** → `bddtdife`
+- **Rate of Change of Dissolved Inorganic Iron Due to Biological Activity** → `fbddtdife`
+- **Rate of Change of Dissolved Inorganic Nitrogen Due to Biological Activity** → `fbddtdin`
+- **Rate of Change of Dissolved Inorganic Phosphorus Due to Biological Activity** → `fbddtdip`
+- **Rate of Change of Dissolved Inorganic Silicon Due to Biological Activity** → `bddtdisi`
+- **Rate of Change of Dissolved Inorganic Silicon Due to Biological Activity** → `fbddtdisi`
+- **Rate of Change of Dissolved Phosphorus Due to Biological Activity** → `bddtdip`
+- **Rate of Change of Net Dissolved Inorganic Carbon** → `fddtdic`
+- **Rate of Change of Net Dissolved Inorganic Iron** → `fddtdife`
+- **Rate of Change of Net Dissolved Inorganic Nitrogen** → `fddtdin`
+- **Rate of Change of Net Dissolved Inorganic Phosphorus** → `fddtdip`
+- **Rate of Change of Net Dissolved Inorganic Silicon** → `fddtdisi`
+- **Rate of Change of Nitrogen Nutrient Due to Biological Activity** → `bddtdin`
+- **Rate of Change of Total Alkalinity** → `fddtalk`
+- **Refreezing of Water in the Snow** → `snrefr`
+- **Region Selection Index** → `basin`
+- **Relative Humidity** → `hur`
+- **Relative Vorticity** → `vortmean`
+- **Relative Vorticity at 850hPa** → `rv850`
+- **Remineralization of Organic Carbon** → `remoc`
+- **Ridged Ice Thickness** → `sirdgthick`
+- **River Discharge** → `rivo`
+- **River Inflow** → `rivi`
+- **Root Distribution** → `rootdsl`
+- **Root Zone Soil Moisture** → `rzwc`
+- **Salt Flux into Sea Water from Rivers** → `sfriver`
+- **Sand Fraction** → `sandfrac`
+- **Saturated Hydraulic Conductivity** → `ksat`
+- **Sea Area Percentage** → `sftof`
+- **Sea Floor Depth Below Geoid** → `deptho`
+- **Sea Ice Salinity** → `sisali`
+- **Sea Ice Thickness** → `sithick`
+- **Sea Level Pressure** → `psl`
+- **Sea Mass Area Flux Through Straits** → `simassacrossline`
+- **Sea Surface Height Above Geoid** → `zos`
+- **Sea Surface Phytoplankton Carbon Concentration** → `phycos`
+- **Sea Surface Salinity** → `sos`
+- **Sea Surface Temperature** → `tos`
+- **Sea Water Added Conservative Temperature** → `pabigthetao`
+- **Sea Water Additional Potential Temperature** → `pathetao`
+- **Sea Water Age Since Surface Contact** → `agessc`
+- **Sea Water Conservative Temperature** → `bigthetao`
+- **Sea Water Mass** → `masso`
+- **Sea Water Potential Temperature** → `thetao`
+- **Sea Water Potential Temperature at Sea Floor** → `tob`
+- **Sea Water Pressure at Sea Floor** → `pbo`
+- **Sea Water Pressure at Sea Water Surface** → `pso`
+- **Sea Water Redistributed Conservative Temperature** → `prbigthetao`
+- **Sea Water Redistributed Potential Temperature** → `prthetao`
+- **Sea Water Salinity** → `so`
+- **Sea Water Salinity at Sea Floor** → `sob`
+- **Sea Water Surface Downward X Stress** → `tauuo`
+- **Sea Water Surface Downward Y Stress** → `tauvo`
+- **Sea Water Transport** → `mfo`
+- **Sea Water Vertical Velocity** → `wo`
+- **Sea Water Volume** → `volo`
+- **Sea Water X Velocity** → `uo`
+- **Sea Water Y Velocity** → `vo`
+- **Sea-Ice Area Flux Through Straits** → `siareaacrossline`
+- **Sea-Ice Area North** → `siarean`
+- **Sea-Ice Area Percentage (Atmospheric Grid)** → `siconca`
+- **Sea-Ice Area Percentage (Ocean Grid)** → `siconc`
+- **Sea-Ice Area Percentage Tendency Due to Dynamics** → `sidconcdyn`
+- **Sea-Ice Area Percentage Tendency Due to Thermodynamics** → `sidconcth`
+- **Sea-Ice Area Percentages in Thickness Categories** → `siitdconc`
+- **Sea-Ice Area South** → `siareas`
+- **Sea-Ice Extent North** → `siextentn`
+- **Sea-Ice Extent South** → `siextents`
+- **Sea-Ice Freeboard** → `sifb`
+- **Sea-Ice Heat Content per Unit Area** → `sihc`
+- **Sea-Ice Mass Change from Dynamics** → `sidmassdyn`
+- **Sea-Ice Mass Change from Thermodynamics** → `sidmassth`
+- **Sea-Ice Mass Change Through Basal Growth** → `sidmassgrowthbot`
+- **Sea-Ice Mass Change Through Bottom Melting** → `sidmassmeltbot`
+- **Sea-Ice Mass Change Through Evaporation and Sublimation** → `sidmassevapsubl`
+- **Sea-Ice Mass Change Through Growth in Supercooled Open Water (Frazil)** → `sidmassgrowthwat`
+- **Sea-Ice Mass Change Through Snow-to-Ice Conversion** → `sidmasssi`
+- **Sea-Ice Mass Change Through Surface Melting** → `sidmassmelttop`
+- **Sea-Ice Mass per Area** → `simass`
+- **Sea-Ice Speed** → `sispeed`
+- **Sea-Ice Thickness in Thickness Categories** → `siitdthick`
+- **Sea-Ice Volume North** → `sivoln`
+- **Sea-Ice Volume per Area** → `sivol`
+- **Sea-Ice Volume South** → `sivols`
+- **Sea-Salt Aerosol Mass Mixing Ratio** → `mmrss`
+- **Sea-Salt Aerosol Optical Depth at 550nm** → `od550ss`
+- **Sea-Surface Tilt Term in Force Balance (X-Component)** → `siforcetiltx`
+- **Sea-Surface Tilt Term in Force Balance (Y-Component)** → `siforcetilty`
+- **Secondary Organic Aerosol Mass Mixing Ratio** → `mmrsoa`
+- **Sedimentation Flux of Dust Mode Coarse Insoluble** → `sedustCI`
+- **Sensible Heat Flux on Land-Use Tile** → `hfssLut`
+- **Shallow Convective Mass Flux** → `smc`
+- **Shortwave Heating Rate Due to Volcanic Aerosols** → `swsffluxaero`
+- **Silicon Production** → `intpbsi`
+- **Silt Fraction** → `siltfrac`
+- **Sinking Particulate Iron Flux** → `expfe`
+- **Sinking Particulate Organic Nitrogen Flux** → `expn`
+- **Sinking Particulate Organic Phosphorus Flux** → `expp`
+- **Sinking Particulate Silicon Flux** → `expsi`
+- **Snow Albedo** → `albsn`
+- **Snow Area Percentage** → `sisnconc`
+- **Snow Area Percentage** → `snc`
+- **Snow Area Percentages in Ice Thickness Categories** → `siitdsnconc`
+- **Snow Depth** → `snd`
+- **Snow Evaporation** → `esn`
+- **Snow Heat Content per Unit Area** → `sisnhc`
+- **Snow Internal Temperature** → `tsn`
+- **Snow Mass Change Through Snow Fall** → `sndmasssnf`
+- **Snow Mass Flux Through Straits** → `snmassacrossline`
+- **Snow Mass per Area** → `sisnmass`
+- **Snow Mass Rate of Change Through Advection by Sea-Ice Dynamics** → `sndmassdyn`
+- **Snow Mass Rate of Change Through Evaporation or Sublimation** → `sndmasssubl`
+- **Snow Mass Rate of Change Through Melt** → `sndmassmelt`
+- **Snow Mass Rate of Change Through Snow-to-Ice Conversion** → `sndmasssi`
+- **Snow Mass Rate of Change Through Wind Drift of Snow** → `sndmasswindrif`
+- **Snow Soot Content** → `sootsn`
+- **Snow Surface Temperature** → `tsns`
+- **Snow Thickness** → `sisnthick`
+- **Snow Thickness in Ice Thickness Categories** → `siitdsnthick`
+- **Snow Water Equivalent Intercepted by the Vegetation** → `snwc`
+- **Snow Water Equivalent on Land-Use Tile** → `sweLut`
+- **Snowfall Flux** → `prsn`
+- **SO2 Volume Mixing Ratio** → `so2`
+- **Soil Frozen Water Content** → `mrfso`
+- **Soil Liquid Water Content** → `mrlso`
+- **Solar Zenith Angle** → `sza`
+- **Specific Humidity** → `hus`
+- **Specific Humidity** → `hus19`
+- **Specific Humidity** → `hus27`
+- **Specific Humidity** → `hus4`
+- **Specific Humidity** → `hus7h`
+- **Specific Humidity** → `hus8`
+- **Specific Humidity** → `hus850`
+- **Square of Brunt Vaisala Frequency in Sea Water** → `obvfsq`
+- **Square of Ocean Mixed Layer Thickness Defined by Sigma T** → `mlotstsq`
+- **Square of Sea Surface Height Above Geoid** → `zossq`
+- **Square of Sea Surface Salinity** → `sossq`
+- **Square of Sea Surface Temperature** → `tossq`
+- **Stratiform Cloud Emissivity** → `dems`
+- **Stratiform Cloud Liquid Droplet Effective Radius** → `reffclws`
+- **Stratiform Cloud Optical Depth** → `dtaus`
+- **Stratiform Graupel Flux** → `grpllsprof`
+- **Stratiform Rainfall Flux** → `prlsprof`
+- **Stratiform Snowfall Flux** → `prlsns`
+- **Stratospheric Optical Depth at 550nm (All Aerosols) 2D-Field (Stratosphere Only)** → `od550aerso`
+- **Stratospheric Optical Depth at 550nm (Sulphate Only) 2D-Field (Stratosphere Only)** → `od550so4so`
+- **Stratospheric Ozone Tracer Volume Mixing Ratio** → `o3ste`
+- **Sublimation of the Snow Free Area** → `sblnosn`
+- **Subsurface Runoff** → `mrrob`
+- **Sulfate Aerosol Optical Depth at 550nm** → `od550so4`
+- **Surface Abiotic Carbonate Ion Concentration** → `co3abioos`
+- **Surface Abiotic Dissolved Inorganic Carbon Concentration** → `dissicabioos`
+- **Surface Abiotic Dissolved Inorganic Carbon-14 Concentration** → `dissi14cabioos`
+- **Surface Abiotic pH** → `phabioos`
+- **Surface Air Pressure** → `ps`
+- **Surface Altitude** → `orog`
+- **Surface Aqueous Partial Pressure of CO2** → `spco2`
+- **Surface Aragonite Concentration** → `aragos`
+- **Surface Bacterial Carbon Concentration** → `baccos`
+- **Surface Calcite Concentration** → `calcos`
+- **Surface Carbon Mass Flux into the Atmosphere Due to Natural Sources [kgC m-2 s-1]** → `fco2nat`
+- **Surface Carbonate Ion Concentration** → `co3os`
+- **Surface Concentration of Dust** → `sconcdust`
+- **Surface Concentration of Sea-Salt Aerosol** → `sconcss`
+- **Surface Concentration of SO4** → `sconcso4`
+- **Surface Detrital Organic Carbon Concentration** → `detocos`
+- **Surface Diffuse Downwelling Clear Sky Shortwave Radiation** → `rsdscsdiff`
+- **Surface Diffuse Downwelling Shortwave Radiation** → `rsdsdiff`
+- **Surface Dissolved Ammonium Concentration** → `nh4os`
+- **Surface Dissolved Inorganic Carbon Concentration** → `dissicos`
+- **Surface Dissolved Inorganic Carbon-13 Concentration** → `dissi13cos`
+- **Surface Dissolved Iron Concentration** → `dfeos`
+- **Surface Dissolved Nitrate Concentration** → `no3os`
+- **Surface Dissolved Organic Carbon Concentration** → `dissocos`
+- **Surface Dissolved Oxygen Concentration** → `o2os`
+- **Surface Dissolved Oxygen Concentration at Saturation** → `o2satos`
+- **Surface Downward CFC11 Flux** → `fgcfc11`
+- **Surface Downward CFC12 Flux** → `fgcfc12`
+- **Surface Downward Eastward Wind Stress** → `tauu`
+- **Surface Downward Flux of O2** → `fgo2`
+- **Surface Downward Latent Heat Flux** → `hflso`
+- **Surface Downward Mass Flux of Carbon as Abiotic CO2 [kgC m-2 s-1]** → `fgco2abio`
+- **Surface Downward Mass Flux of Carbon as CO2 [kgC m-2 s-1]** → `fgco2`
+- **Surface Downward Mass Flux of Carbon as Natural CO2 [kgC m-2 s-1]** → `fgco2nat`
+- **Surface Downward Mass Flux of Carbon-13 as 13CO2 [kgC m-2 s-1]** → `fg13co2`
+- **Surface Downward Mass Flux of Carbon-14 as 14CO2 [kgC m-2 s-1]** → `fg14co2`
+- **Surface Downward Mass Flux of Carbon-14 as Abiotic 14CO2 [kgC m-2 s-1]** → `fg14co2abio`
+- **Surface Downward Net Flux of Iron** → `fsfe`
+- **Surface Downward Net Flux of Nitrogen** → `fsn`
+- **Surface Downward Northward Wind Stress** → `tauv`
+- **Surface Downward Sensible Heat Flux** → `hfsso`
+- **Surface Downward SF6 Flux** → `fgsf6`
+- **Surface Downward X Stress Correction** → `tauucorr`
+- **Surface Downward Y Stress Correction** → `tauvcorr`
+- **Surface Downwelling Clear-Sky Longwave Radiation** → `rldscs`
+- **Surface Downwelling Clear-Sky Shortwave Radiation** → `rsdscs`
+- **Surface Downwelling Clear-Sky Shortwave Radiation for Each Band** → `rsdscsbnd`
+- **Surface Downwelling Clear-Sky, Aerosol-Free Shortwave Radiation** → `rsdscsaf`
+- **Surface Downwelling Clear-Sky, Aerosol-Free Shortwave Radiation in Bands** → `rsdscsafbnd`
+- **Surface Downwelling Longwave Radiation** → `rlds`
+- **Surface Downwelling Shortwave Radiation** → `rsds`
+- **Surface Ice Melt Flux** → `icem`
+- **Surface Mass Balance Flux** → `acabf`
+- **Surface Mass Concentration of Calcareous Phytoplankton Expressed as Chlorophyll in Sea Water** → `chlcalcos`
+- **Surface Mass Concentration of Diatoms Expressed as Chlorophyll in Sea Water** → `chldiatos`
+- **Surface Mass Concentration of Diazotrophs Expressed as Chlorophyll in Sea Water** → `chldiazos`
+- **Surface Mass Concentration of Other Phytoplankton Expressed as Chlorophyll in Sea Water** → `chlmiscos`
+- **Surface Mass Concentration of Picophytoplankton Expressed as Chlorophyll in Sea Water** → `chlpicoos`
+- **Surface Mass Concentration of Total Phytoplankton Expressed as Chlorophyll in Sea Water** → `chlos`
+- **Surface Mole Concentration of Calcareous Phytoplankton Expressed as Carbon in Sea Water** → `phycalcos`
+- **Surface Mole Concentration of Carbonate Ion in Equilibrium with Pure Aragonite in Sea Water** → `co3sataragos`
+- **Surface Mole Concentration of Carbonate Ion in Equilibrium with Pure Calcite in Sea Water** → `co3satcalcos`
+- **Surface Mole Concentration of Diatoms Expressed as Carbon in Sea Water** → `phydiatos`
+- **Surface Mole Concentration of Diazotrophs Expressed as Carbon in Sea Water** → `phydiazos`
+- **Surface Mole Concentration of Dimethyl Sulphide in Sea Water** → `dmsos`
+- **Surface Mole Concentration of Mesozooplankton Expressed as Carbon in Sea Water** → `zmesoos`
+- **Surface Mole Concentration of Microzooplankton Expressed as Carbon in Sea Water** → `zmicroos`
+- **Surface Mole Concentration of Miscellaneous Phytoplankton Expressed as Carbon in Sea Water** → `phymiscos`
+- **Surface Mole Concentration of Other Zooplankton Expressed as Carbon in Sea Water** → `zmiscos`
+- **Surface Mole Concentration of Particulate Organic Matter Expressed as Iron in Sea Water** → `bfeos`
+- **Surface Mole Concentration of Particulate Organic Matter Expressed as Nitrogen in Sea Water** → `ponos`
+- **Surface Mole Concentration of Particulate Organic Matter Expressed as Phosphorus in Sea Water** → `popos`
+- **Surface Mole Concentration of Particulate Organic Matter Expressed as Silicon in Sea Water** → `bsios`
+- **Surface Mole Concentration of Phytoplankton Nitrogen in Sea Water** → `phynos`
+- **Surface Mole Concentration of Picophytoplankton Expressed as Carbon in Sea Water** → `phypicoos`
+- **Surface Mole Concentration of Total Phytoplankton Expressed as Iron in Sea Water** → `phyfeos`
+- **Surface Mole Concentration of Total Phytoplankton Expressed as Phosphorus in Sea Water** → `phypos`
+- **Surface Mole Concentration of Total Phytoplankton Expressed as Silicon in Sea Water** → `physios`
+- **Surface Natural Carbonate Ion Concentration** → `co3natos`
+- **Surface Natural Dissolved Inorganic Carbon Concentration** → `dissicnatos`
+- **Surface Natural pH** → `phnatos`
+- **Surface Natural Total Alkalinity** → `talknatos`
+- **Surface Net Downward Longwave Radiation** → `rlntds`
+- **Surface pH** → `phos`
+- **Surface Radiative Temperature** → `tr`
+- **Surface Runoff** → `mrros`
+- **Surface Snow Amount** → `snw`
+- **Surface Snow and Ice Melt Flux** → `snicem`
+- **Surface Snow and Ice Refreeze Flux** → `snicefreez`
+- **Surface Snow and Ice Sublimation Flux** → `sbl`
+- **Surface Snow Melt** → `snm`
+- **Surface Temperature** → `ts`
+- **Surface Temperature of Sea Ice** → `sitemptop`
+- **Surface Temperature on Landuse Tile** → `tslsiLut`
+- **Surface Temperature Where Land or Sea Ice** → `tslsi`
+- **Surface Total Alkalinity** → `talkos`
+- **Surface Total Dissolved Inorganic Phosphorus Concentration** → `po4os`
+- **Surface Total Dissolved Inorganic Silicon Concentration** → `sios`
+- **Surface Upward Flux of DMS** → `fgdms`
+- **Surface Upward Latent Heat Flux** → `hfls`
+- **Surface Upward Sensible Heat Flux** → `hfss`
+- **Surface Upwelling Clean Clear-Sky Shortwave Radiation** → `rsuscsaf`
+- **Surface Upwelling Clear-Sky Shortwave Radiation** → `rsuscs`
+- **Surface Upwelling Clear-Sky Shortwave Radiation for Each Band** → `rsuscsbnd`
+- **Surface Upwelling Clear-Sky, Aerosol-Free Shortwave Radiation in Bands** → `rsuscsafbnd`
+- **Surface Upwelling Longwave on Land-Use Tile** → `rlusLut`
+- **Surface Upwelling Longwave Radiation** → `rlus`
+- **Surface Upwelling Shortwave on Land-Use Tile** → `rsusLut`
+- **Surface Upwelling Shortwave Radiation** → `rsus`
+- **Surface Water Storage** → `sw`
+- **Surface Zooplankton Carbon Concentration** → `zoocos`
+- **Temperature at Ice-Ocean Interface** → `sitempbot`
+- **Temperature at Snow-Ice Interface** → `sitempsnic`
+- **Temperature at Top of Ice Sheet Model** → `litemptop`
+- **Temperature Flux Due to Evaporation Expressed as Heat Flux out of Sea Water** → `hfevapds`
+- **Temperature Flux Due to Rainfall Expressed as Heat Flux into Sea Water** → `hfrainds`
+- **Temperature Flux Due to Runoff Expressed as Heat Flux into Sea Water** → `hfrunoffds`
+- **Temperature Flux Due to Runoff Expressed as Heat Flux into Sea Water** → `hfrunoffds2d`
+- **Temperature of Bare Soil** → `tgs`
+- **Temperature of Soil** → `tsl`
+- **Temperature Tendency Due to Non-Orographic Gravity Wave Dissipation** → `tntnogw`
+- **Temperature Tendency Due to Orographic Gravity Wave Dissipation** → `tntogw`
+- **Tendency of Air Temperature** → `tnt`
+- **Tendency of Air Temperature Due to Advection** → `tnta`
+- **Tendency of Air Temperature Due to Boundary Layer Mixing** → `tntpbl`
+- **Tendency of Air Temperature Due to Clear Sky Longwave Radiative Heating** → `tntrlcs`
+- **Tendency of Air Temperature Due to Clear Sky Shortwave Radiative Heating** → `tntrscs`
+- **Tendency of Air Temperature Due to Convection** → `tntc`
+- **Tendency of Air Temperature Due to Longwave Radiative Heating** → `tntrl`
+- **Tendency of Air Temperature Due to Longwave Radiative Heating** → `tntrl27`
+- **Tendency of Air Temperature Due to Model Physics** → `tntmp`
+- **Tendency of Air Temperature Due to Model Physics** → `tntmp27`
+- **Tendency of Air Temperature Due to Numerical Diffusion** → `tntd`
+- **Tendency of Air Temperature Due to Radiative Heating** → `tntr`
+- **Tendency of Air Temperature Due to Radiative Heating** → `tntr27`
+- **Tendency of Air Temperature Due to Shortwave Radiative Heating** → `tntrs`
+- **Tendency of Air Temperature Due to Shortwave Radiative Heating** → `tntrs27`
+- **Tendency of Air Temperature Due to Stratiform Cloud and Precipitation and Boundary Layer Mixing** → `tntscpbl`
+- **Tendency of Air Temperature Due to Stratiform Clouds and Precipitation** → `tntscp`
+- **Tendency of Eastward Wind Due to Eliassen-Palm Flux Divergence** → `utendepfd`
+- **Tendency of Eastward Wind Due to TEM Northward Advection and Coriolis Term** → `utendvtem`
+- **Tendency of Eastward Wind Due to TEM Upward Advection** → `utendwtem`
+- **Tendency of Eastward Wind from Numerical Artefacts** → `diabdrag`
+- **Tendency of Ocean Eddy Kinetic Energy Content Due to Parameterized Eddy Advection** → `tnkebto`
+- **Tendency of Ocean Eddy Kinetic Energy Content Due to Parameterized Eddy Advection** → `tnkebto2d`
+- **Tendency of Ocean Potential Energy Content** → `tnpeo`
+- **Tendency of Ocean Potential Energy Content Due to Background** → `tnpeotb`
+- **Tendency of Ocean Potential Energy Content Due to Tides** → `tnpeot`
+- **Tendency of Sea Water Conservative Temperature Expressed as Heat Content** → `ocontemptend`
+- **Tendency of Sea Water Conservative Temperature Expressed as Heat Content Due to Parameterized Dianeutral Mixing** → `ocontempdiff`
+- **Tendency of Sea Water Conservative Temperature Expressed as Heat Content Due to Parameterized Eddy Advection** → `ocontemppadvect`
+- **Tendency of Sea Water Conservative Temperature Expressed as Heat Content Due to Parameterized Mesoscale Diffusion** → `ocontemppmdiff`
+- **Tendency of Sea Water Conservative Temperature Expressed as Heat Content Due to Parameterized Submesoscale Advection** → `ocontemppsmadvect`
+- **Tendency of Sea Water Conservative Temperature Expressed as Heat Content Due to Residual Mean Advection** → `ocontemprmadvect`
+- **Tendency of Sea Water Potential Temperature Expressed as Heat Content** → `opottemptend`
+- **Tendency of Sea Water Potential Temperature Expressed as Heat Content Due to Parameterized Dianeutral Mixing** → `opottempdiff`
+- **Tendency of Sea Water Potential Temperature Expressed as Heat Content Due to Parameterized Eddy Advection** → `opottemppadvect`
+- **Tendency of Sea Water Potential Temperature Expressed as Heat Content Due to Parameterized Mesoscale Diffusion** → `opottemppmdiff`
+- **Tendency of Sea Water Potential Temperature Expressed as Heat Content Due to Parameterized Submesoscale Advection** → `opottemppsmadvect`
+- **Tendency of Sea Water Potential Temperature Expressed as Heat Content Due to Residual Mean Advection** → `opottemprmadvect`
+- **Tendency of Sea Water Salinity Expressed as Salt Content** → `osalttend`
+- **Tendency of Sea Water Salinity Expressed as Salt Content Due to Parameterized Dianeutral Mixing** → `osaltdiff`
+- **Tendency of Sea Water Salinity Expressed as Salt Content Due to Parameterized Eddy Advection** → `osaltpadvect`
+- **Tendency of Sea Water Salinity Expressed as Salt Content Due to Parameterized Mesoscale Diffusion** → `osaltpmdiff`
+- **Tendency of Sea Water Salinity Expressed as Salt Content Due to Parameterized Submesoscale Advection** → `osaltpsmadvect`
+- **Tendency of Sea Water Salinity Expressed as Salt Content Due to Residual Mean Advection** → `osaltrmadvect`
+- **Tendency of Specific Humidity** → `tnhus`
+- **Tendency of Specific Humidity Due to Advection** → `tnhusa`
+- **Tendency of Specific Humidity Due to Boundary Layer Mixing** → `tnhuspbl`
+- **Tendency of Specific Humidity Due to Convection** → `tnhusc`
+- **Tendency of Specific Humidity Due to Model Physics** → `tnhusmp`
+- **Tendency of Specific Humidity Due to Numerical Diffusion** → `tnhusd`
+- **Tendency of Specific Humidity Due to Stratiform Cloud and Precipitation and Boundary Layer Mixing** → `tnhusscpbl`
+- **Tendency of Specific Humidity Due to Stratiform Clouds and Precipitation** → `tnhusscp`
+- **Terrestrial Water Storage** → `mrtws`
+- **The Cell Area of the Ice Sheet Model** → `modelCellAreai`
+- **Thickness of Refrozen Ice on Melt Pond** → `simprefrozen`
+- **Thickness of Soil Layers** → `slthick`
+- **TOA All-Sky Longwave Radiative Forcing Due to Dust** → `lwtoaasdust`
+- **TOA Clear-Sky Longwave Radiative Forcing Due to Aerosols** → `lwtoacsaer`
+- **TOA Clear-Sky Longwave Radiative Forcing Due to Dust** → `lwtoacsdust`
+- **TOA Incident Shortwave Radiation** → `rsdt`
+- **TOA Outgoing Aerosol-Free Longwave Radiation** → `rlutaf`
+- **TOA Outgoing Aerosol-Free Shortwave Radiation** → `rsutaf`
+- **TOA Outgoing Clear-Sky Longwave Flux Due to Volcanic Aerosols** → `lwtoafluxaerocs`
+- **TOA Outgoing Clear-Sky Longwave Radiation** → `rlutcs`
+- **TOA Outgoing Clear-Sky Longwave Radiation 4XCO2 Atmosphere** → `rlutcs4co2`
+- **TOA Outgoing Clear-Sky Shortwave Flux Due to Volcanic Aerosols** → `swtoafluxaerocs`
+- **TOA Outgoing Clear-Sky Shortwave Radiation** → `rsutcs`
+- **TOA Outgoing Clear-Sky Shortwave Radiation 4XCO2 Atmosphere** → `rsutcs4co2`
+- **TOA Outgoing Clear-Sky Shortwave Radiation for Each Band** → `rsutcsbnd`
+- **TOA Outgoing Clear-Sky, Aerosol-Free Longwave Radiation** → `rlutcsaf`
+- **TOA Outgoing Clear-Sky, Aerosol-Free Shortwave Radiation** → `rsutcsaf`
+- **TOA Outgoing Clear-Sky, Aerosol-Free Shortwave Radiation in Bands** → `rsutcsafbnd`
+- **TOA Outgoing Longwave Radiation** → `rlut`
+- **TOA Outgoing Longwave Radiation 4XCO2 Atmosphere** → `rlut4co2`
+- **TOA Outgoing Shortwave Radiation** → `rsut`
+- **TOA Outgoing Shortwave Radiation in 4XCO2 Atmosphere** → `rsut4co2`
+- **TOA Solar Irradiance for Each Band** → `solbnd`
+- **Total Alkalinity** → `talk`
+- **Total Atmospheric Mass of CO2** → `co2mass`
+- **Total Atmospheric Mass of CO2** → `co2massClim`
+- **Total Autotrophic Respiration on Land as Carbon Mass Flux [kgC m-2 s-1]** → `rGrowth`
+- **Total Basal Mass Balance Flux** → `tendlibmassbf`
+- **Total Calving Flux** → `tendlicalvf`
+- **Total Canopy Water Storage** → `cw`
+- **Total Carbon in All Terrestrial Carbon Pools** → `cLand`
+- **Total Carbon Loss from Natural and Managed Fire on Land-Use Tile, Including Deforestation Fires [kgC m-2 s-1]** → `cTotFireLut`
+- **Total Carbon Mass Flux from Litter to Soil** → `fLitterSoil`
+- **Total Carbon Mass Flux from Vegetation Directly to Soil** → `fVegSoil`
+- **Total Carbon Mass Flux from Vegetation to Litter** → `fVegLitter`
+- **Total Carbon Mass Flux from Vegetation to Litter as a Result of Leaf, Branch, and Root Senescence** → `fVegLitterSenescence`
+- **Total Carbon Mass Flux from Vegetation to Litter as a Result of Mortality** → `fVegLitterMortality`
+- **Total Carbon Mass Flux from Vegetation to Soil as a Result of Leaf, Branch, and Root Senescence** → `fVegSoilSenescence`
+- **Total Carbon Mass Flux from Vegetation to Soil as a Result of Mortality** → `fVegSoilMortality`
+- **Total Cloud Cover Percentage** → `clt`
+- **Total Column Ozone** → `toz`
+- **Total Deposition Rate of Dust** → `depdust`
+- **Total Direct Emission Rate of SO4** → `emiso4`
+- **Total Dissolved Inorganic Phosphorus Concentration** → `po4`
+- **Total Dissolved Inorganic Silicon Concentration** → `si`
+- **Total Emission Rate of Anthropogenic CO** → `emiaco`
+- **Total Emission Rate of Anthropogenic NOx** → `emianox`
+- **Total Emission Rate of Anthropogenic Organic Aerosol** → `emiaoa`
+- **Total Emission Rate of Biogenic NMVOC** → `emibvoc`
+- **Total Emission Rate of Black Carbon Aerosol Mass** → `emibc`
+- **Total Emission Rate of CO** → `emico`
+- **Total Emission Rate of DMS** → `emidms`
+- **Total Emission Rate of Dust** → `emidust`
+- **Total Emission Rate of Isoprene** → `emiisop`
+- **Total Emission Rate of NH3** → `eminh3`
+- **Total Emission Rate of NMVOC** → `emivoc`
+- **Total Emission Rate of NOx** → `eminox`
+- **Total Emission Rate of Sea-Salt Aerosol** → `emiss`
+- **Total Emission Rate of SO2** → `emiso2`
+- **Total Grazing of Phytoplankton by Zooplankton** → `graz`
+- **Total Heterotrophic Respiration on Land as Carbon Mass Flux [kgC m-2 s-1]** → `rh`
+- **Total Inorganic Bromine Volume Mixing Ratio** → `bry`
+- **Total Inorganic Chlorine Volume Mixing Ratio** → `cly`
+- **Total Land N2O Flux** → `fN2O`
+- **Total Land NOx Flux** → `fNOx`
+- **Total Net Production of Anthropogenic Secondary Organic Aerosol** → `chepasoa`
+- **Total Nitrogen Added for Cropland Fertilisation (Artificial and Manure)** → `fNfert`
+- **Total Nitrogen in All Terrestrial Nitrogen Pools** → `nLand`
+- **Total Nitrogen Loss to Leaching or Runoff (Sum of Ammonium, Nitrite and Nitrate)** → `fNleach`
+- **Total Nitrogen Lost (Including NHx, NOx, N2O, N2 and Leaching)** → `fNloss`
+- **Total Nitrogen Lost to the Atmosphere (Including NHx, NOx, N2O, N2) from All Processes Except Fire** → `fNgasNonFire`
+- **Total Nitrogen Lost to the Atmosphere (Including NHx, NOx, N2O, N2) from Fire** → `fNgasFire`
+- **Total Nitrogen Lost to the Atmosphere (Sum of NHx, NOx, N2O, N2)** → `fNgas`
+- **Total Nitrogen Mass Flux from Litter to Soil** → `fNLitterSoil`
+- **Total Nitrogen Mass Flux from Vegetation Directly to Soil** → `fNVegSoil`
+- **Total Nitrogen Mass Flux from Vegetation to Litter** → `fNVegLitter`
+- **Total Odd Oxygen (Ox) Loss Rate** → `oxloss`
+- **Total Odd Oxygen (Ox) Production Rate** → `oxprod`
+- **Total Organic Aerosol Mass Mixing Ratio** → `mmroa`
+- **Total Organic Aerosol Optical Depth at 550nm** → `od550oa`
+- **Total Plant Nitrogen Uptake (Sum of Ammonium and Nitrate) Irrespective of the Source of Nitrogen** → `fNup`
+- **Total Reactive Nitrogen Volume Mixing Ratio** → `noy`
+- **Total Respiration from Leaves as Carbon Mass Flux [kgC m-2 s-1]** → `raLeaf`
+- **Total Respiration from Other Pools (not Leaves Stem or Roots) as Carbon Mass Flux [kgC m-2 s-1]** → `raOther`
+- **Total Respiration from Roots as Carbon Mass Flux [kgC m-2 s-1]** → `raRoot`
+- **Total Respiration from Stem as Carbon Mass Flux [kgC m-2 s-1]** → `raStem`
+- **Total Runoff** → `mrro`
+- **Total Runoff from Land-Use Tile** → `mrroLut`
+- **Total Soil Moisture** → `mrsoLut`
+- **Total Soil Moisture Content** → `mrso`
+- **Total Soil Wetness** → `mrsow`
+- **Total Surface Mass Balance Flux** → `tendacabf`
+- **Total Vegetated Percentage Cover** → `vegFrac`
+- **Total Water Content of Soil Layer** → `mrsol`
+- **Transformed Eulerian Mean Mass Streamfunction** → `psitem`
+- **Transformed Eulerian Mean Northward Wind** → `vtem`
+- **Transformed Eulerian Mean Upward Wind** → `wtem`
+- **Transpiration** → `tran`
+- **Tree Cover Percentage** → `treeFrac`
+- **Tropopause Air Pressure** → `ptp`
+- **Tropopause Air Temperature** → `tatp`
+- **Tropopause Altitude Above Geoid** → `ztp`
+- **Tropospheric Ozone Column** → `tropoz`
+- **Turnover Rate of Each Model Soil Carbon Pool** → `tSoilPools`
+- **UGRID Grid Specification** → `ugrido`
+- **Upward Air Velocity** → `wa`
+- **Upward Component of Land-Ice Basal Velocity** → `zvelbase`
+- **Upward Component of Land-Ice Surface Velocity** → `zvelsurf`
+- **Upward Component of the Eliassen-Palm Flux** → `epfz`
+- **Upward Geothermal Heat Flux at Sea Floor** → `hfgeou`
+- **Upward Ocean Mass Transport** → `wmo`
+- **Upwelling Clear-Sky Longwave Radiation** → `rlucs`
+- **Upwelling Clear-Sky Longwave Radiation 4XCO2 Atmosphere** → `rlucs4co2`
+- **Upwelling Clear-Sky Shortwave Radiation** → `rsucs`
+- **Upwelling Clear-Sky Shortwave Radiation 4XCO2 Atmosphere** → `rsucs4co2`
+- **Upwelling Clear-Sky Shortwave Radiation at Each Level for Each Band** → `rsucsbnd`
+- **Upwelling Clear-Sky, Aerosol-Free Shortwave Radiation** → `rsucsaf`
+- **Upwelling Clear-Sky, Aerosol-Free Shortwave Radiation in Bands** → `rsucsafbnd`
+- **Upwelling Longwave Flux over Sea Ice** → `sifllwutop`
+- **Upwelling Longwave Radiation** → `rlu`
+- **Upwelling Longwave Radiation 4XCO2 Atmosphere** → `rlu4co2`
+- **Upwelling Shortwave Flux over Sea Ice** → `siflswutop`
+- **Upwelling Shortwave Radiation** → `rsu`
+- **Upwelling Shortwave Radiation 4XCO2 Atmosphere** → `rsu4co2`
+- **Vegetation Canopy Temperature** → `tcs`
+- **Vertically Averaged Sea Water Potential Temperature** → `thetaot`
+- **Vertically Integrated Eastward Dry Statice Energy Transport** → `intuadse`
+- **Vertically Integrated Eastward Moisture Transport** → `intuaw`
+- **Vertically Integrated Mass Content of Air in Layer** → `airmass`
+- **Vertically Integrated Northward Dry Static Energy Transport** → `intvadse`
+- **Vertically Integrated Northward Moisture Transport** → `intvaw`
+- **Virtual Salt Flux Correction** → `vsfcorr`
+- **Virtual Salt Flux into Sea Water** → `vsf`
+- **Virtual Salt Flux into Sea Water Due to Evaporation** → `vsfevap`
+- **Virtual Salt Flux into Sea Water Due to Rainfall** → `vsfpr`
+- **Virtual Salt Flux into Sea Water Due to Sea Ice Thermodynamics** → `vsfsit`
+- **Virtual Salt Flux into Sea Water from Rivers** → `vsfriver`
+- **Water Evaporation Flux Where Ice Free Ocean over Sea** → `evs`
+- **Water Evaporation from Soil** → `evspsblsoi`
+- **Water Flowing out of Snowpack** → `snmsl`
+- **Water Flux Correction** → `wfcorr`
+- **Water Flux into Sea Water** → `wfo`
+- **Water Flux into Sea Water Due to Sea Ice Thermodynamics** → `fsitherm`
+- **Water Flux into Sea Water from Icebergs** → `ficeberg`
+- **Water Flux into Sea Water from Icebergs** → `ficeberg2d`
+- **Water Flux into Sea Water from Land Ice** → `flandice`
+- **Water Flux into Sea Water from Rivers** → `friver`
+- **Water Flux into Sea Water Without Flux Correction** → `wfonocorr`
+- **Water Table Depth** → `wtd`
+- **Water Vapor Path** → `prw`
+- **Wet Bulb Potential Temperature** → `wbptemp7h`
+- **Wet Deposition Rate of Black Carbon Aerosol Mass** → `wetbc`
+- **Wet Deposition Rate of Dry Aerosol Total Organic Matter** → `wetoa`
+- **Wet Deposition Rate of Dust** → `wetdust`
+- **Wet Deposition Rate of NH3** → `wetnh3`
+- **Wet Deposition Rate of NH4** → `wetnh4`
+- **Wet Deposition Rate of NOy Including Aerosol Nitrate** → `wetnoy`
+- **Wet Deposition Rate of Sea-Salt Aerosol** → `wetss`
+- **Wet Deposition Rate of SO2** → `wetso2`
+- **Wet Deposition Rate of SO4** → `wetso4`
+- **Wet Diameter Mode Coarse Insoluble** → `md`
+- **Wetland Percentage Cover** → `wetlandFrac`
+- **Wilting Point** → `wilt`
+- **Wood and Agricultural Product Pool Carbon Associated with Land-Use Tiles** → `cProductLut`
+- **X-Component of Atmospheric Stress on Sea Ice** → `sistrxdtop`
+- **X-Component of Land Ice Basal Velocity** → `xvelbase`
+- **X-Component of Land Ice Surface Velocity** → `xvelsurf`
+- **X-Component of Land Ice Vertical Mean Velocity** → `xvelmean`
+- **X-Component of Ocean Stress on Sea Ice** → `sistrxubot`
+- **X-Component of Sea-Ice Mass Transport** → `sidmasstranx`
+- **X-Component of Sea-Ice Velocity** → `siu`
+- **Y-Component of Atmospheric Stress on Sea Ice** → `sistrydtop`
+- **Y-Component of Land Ice Basal Velocity** → `yvelbase`
+- **Y-Component of Land Ice Surface Velocity** → `yvelsurf`
+- **Y-Component of Land Ice Vertical Mean Velocity** → `yvelmean`
+- **Y-Component of Ocean Stress on Sea Ice** → `sistryubot`
+- **Y-Component of Sea-Ice Mass Transport** → `sidmasstrany`
+- **Y-Component of Sea-Ice Velocity** → `siv`
+- **Zonal Mean Diabatic Heating Rates** → `zmtnt`
+- **Zonal Mean Longwave Heating Rate Due to Volcanic Aerosols** → `zmlwaero`
+- **Zonal Mean Shortwave Heating Rate Due to Volcanic Aerosols** → `zmswaero`
+- **Zooplankton Carbon Concentration** → `zooc`

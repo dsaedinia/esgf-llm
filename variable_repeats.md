@@ -1,0 +1,57 @@
+- **Rate of Change of Dissolved Inorganic Carbon Due to Biological Activity** → bddtdic, fbddtdic
+- **Rate of Change of Dissolved Inorganic Iron Due to Biological Activity** → bddtdife, fbddtdife
+- **Rate of Change of Dissolved Inorganic Silicon Due to Biological Activity** → bddtdisi, fbddtdisi
+- **Carbon Mass in Coarse Woody Debris** → cCwd, cLitterCwd
+- **Carbon Mass in Above-Ground Litter** → cLitterAbove, cLitterSurf
+- **Carbon Mass in Below-Ground Litter** → cLitterBelow, cLitterSubSurf
+- **Mole Fraction of CH4** → ch4, ch4Clim
+- **Global Mean Mole Fraction of CH4** → ch4global, ch4globalClim
+- **Mole Fraction of CO2** → co2, co2Clim
+- **Total Atmospheric Mass of CO2** → co2mass, co2massClim
+- **Ocean Momentum XY Biharmonic Diffusivity** → difmxybo, difmxybo2d
+- **Ocean Momentum XY Laplacian Diffusivity** → difmxylo, difmxylo2d
+- **Ocean Tracer Bolus Biharmonic Diffusivity** → diftrbbo, diftrbbo2d
+- **Ocean Tracer Diffusivity Due to Parameterized Mesoscale Advection** → diftrblo, diftrblo2d
+- **Ocean Tracer Epineutral Biharmonic Diffusivity** → diftrebo, diftrebo2d
+- **Ocean Tracer Epineutral Laplacian Diffusivity** → diftrelo, diftrelo2d
+- **Ocean Tracer XY Biharmonic Diffusivity** → diftrxybo, diftrxybo2d
+- **Ocean Tracer XY Laplacian Diffusivity** → diftrxylo, diftrxylo2d
+- **Ocean Kinetic Energy Dissipation per Unit Area Due to XY Friction** → dispkexyfo, dispkexyfo2d
+- **Downward Flux of Aragonite** → eparag100, exparag
+- **Downward Flux of Particulate Organic Carbon** → epc100, expc
+- **Downward Flux of Calcite** → epcalc100, expcalc
+- **Water Flux into Sea Water from Icebergs** → ficeberg, ficeberg2d
+- **Heat Flux into Sea Water Due to Iceberg Thermodynamics** → hfibthermds, hfibthermds2d
+- **Temperature Flux Due to Runoff Expressed as Heat Flux into Sea Water** → hfrunoffds, hfrunoffds2d
+- **Heat Flux into Sea Water Due to Frazil Ice Formation** → hfsifrazil, hfsifrazil2d
+- **Heat Flux into Sea Water Due to Snow Thermodynamics** → hfsnthermds, hfsnthermds2d
+- **Specific Humidity** → hus, hus19, hus27, hus4, hus7h, hus8, hus850
+- **Aragonite Production** → intparag, parag
+- **Calcite Production** → intpcalcite, pcalc
+- **Net Primary Mole Productivity of Carbon by Calcareous Phytoplankton** → intppcalc, ppcalc
+- **Net Primary Organic Carbon Production by Diatoms** → intppdiat, ppdiat
+- **Net Primary Mole Productivity of Carbon by Diazotrophs** → intppdiaz, ppdiaz
+- **Net Primary Organic Carbon Production by Other Phytoplankton** → intppmisc, ppmisc
+- **Net Primary Mole Productivity of Carbon by Picophytoplankton** → intpppico, pppico
+- **Ocean Meridional Overturning Mass Streamfunction** → msftmrho, msftmz
+- **Ocean Meridional Overturning Mass Streamfunction Due to Parameterized Mesoscale Advection** → msftmrhompa, msftmzmpa
+- **Ocean Y Overturning Mass Streamfunction** → msftyrho, msftyz
+- **Ocean Y Overturning Mass Streamfunction Due to Parameterized Mesoscale Advection** → msftyrhompa, msftyzmpa
+- **Mole Fraction of N2O** → n2o, n2oClim
+- **Global Mean Mole Fraction of N2O** → n2oglobal, n2oglobalClim
+- **Mole Fraction of O3** → o3, o3Clim
+- **Ambient Aerosol Optical Thickness at 550nm** → od550aer, od550csaer
+- **Primary Carbon Production by Phytoplankton** → pp, ppos
+- **Snow Area Percentage** → sisnconc, snc
+- **Air Temperature** → ta, ta19, ta27, ta500, ta700, ta7h, ta8, ta850
+- **Tendency of Ocean Eddy Kinetic Energy Content Due to Parameterized Eddy Advection** → tnkebto, tnkebto2d
+- **Tendency of Air Temperature Due to Model Physics** → tntmp, tntmp27
+- **Tendency of Air Temperature Due to Radiative Heating** → tntr, tntr27
+- **Tendency of Air Temperature Due to Longwave Radiative Heating** → tntrl, tntrl27
+- **Tendency of Air Temperature Due to Shortwave Radiative Heating** → tntrs, tntrs27
+- **Eastward Wind** → ua, ua19, ua27, ua7h, ua8
+- **Eastward Acceleration Due to Non-Orographic Gravity Wave Drag** → utendnogw, utendnogw27
+- **Northward Wind** → va, va19, va27, va7h, va8
+- **Northward Acceleration Due to Non-Orographic Gravity Wave Drag** → vtendnogw, vtendnogw27
+- **Omega (=dp/dt)** → wap, wap19, wap27, wap4, wap7h, wap8
+- **Geopotential Height** → zg, zg19, zg27, zg7h, zg8
