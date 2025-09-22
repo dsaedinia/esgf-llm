@@ -14,3 +14,6 @@ wheels/
 .uv/
 
 .webui_secret_key
+
+#intake testing script
+intake_test_script.py
