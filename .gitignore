@@ -17,3 +17,7 @@ wheels/
 
 #intake testing script
 intake_test_script.py
+
+# generated data
+all_data.jsonl
+chatml_data.jsonl

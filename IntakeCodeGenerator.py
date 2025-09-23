@@ -545,12 +545,12 @@ for i, model in enumerate(models):
         ]
 
         freq_sets = [
-            "hourly",    # sampled hourly
+            "hourly",    # sampled hourly #not the actual key word but will be mapped to 1hr in the code snippet
             "1hr",
             "3hr",    # 3 hour mean sample
             "6hr",    # 6 hour mean sample
             "day",
-            "daily"    # daily mean samples
+            "daily",    # daily mean samples
             "dec",    # decadal mean samples
             "fx",     # fixed (time invariant) field
             "mon",
