@@ -8,7 +8,9 @@ class IntakeCodeGenerator:
         self.output_path = output_path
         os.makedirs(os.path.dirname(self.output_path), exist_ok=True)
 
-    # Helper Functions
+    ####################
+    # Helper Functions #
+    ####################
 
     def get_source_ids(self):
         with open(self.input_path, "r") as f:
@@ -27,7 +29,6 @@ class IntakeCodeGenerator:
         snippets (list of tuples): A list of tuples where each tuple contains an instruction and its corresponding output.
         """
         with open(self.output_path, 'a', encoding='utf-8') as jsonl_file:
-
             for instruction, output in snippets:
                 entry = {
                     'Instruction': instruction,
@@ -75,74 +76,16 @@ class IntakeCodeGenerator:
                 return key
         return user_input  # Return as is if no match found
 
-    # Code Generation Functions
-    def generate_dataset_list_by_variable(self, variable: str, variable_label: str) -> list[tuple[str, str]]:
-        """
-        Generate intake code snippets that focus on searching for datasets based only on variables and returning as list of tuples representing instructions and output code.
-        Will use a combination of single and multiple variables for prompts to teach the model to generalize appropriately.
-
-        Parameters
-        ----------
-        variable: The variable or variables to search for, formatted as a string.
-        variable_label: The label for the variable, singular or plural.
-        return: A list of tuples containing the instruction and output code snippet.
-        """
-        prompt_variable = variable.replace('"', '')
-        code_template = f"""
-```python
-from intake_esgf import ESGFCatalog
-import pandas as pd
-
-# Set Pandas display options for better readability
-pd.set_option("display.max_rows", None)        # don't overwhelm terminal
-pd.set_option("display.max_columns", None)   # show all columns
-pd.set_option("display.width", None)         # wider view
-
-# initialize the catalog
-cat = ESGFCatalog()
-
-# define the criteria to search for
-variables = [{variable}]
-
-# search the catalog with specified constraints
-search_results = cat.search(
-    variable_id= variables
-)
-
-# print the resulting dataframe to show list of datasets found
-print(search_results.df)
-```
-"""
-        prompts = [
-            f"List all datasets that contain {variable_label} {prompt_variable} using intake-esgf in python.",
-            f"Using intake-esgf, how do I find datasets that include {variable_label} {prompt_variable}?",
-            f"I'm looking for datasets with {variable_label} {prompt_variable}. Can you provide intake-esgf code in python?",
-            f"Can you help me write intake-esgf code in python to search for datasets containing {variable_label} {prompt_variable}?",
-            f"I need a python snippet using intake-esgf to get datasets that have {variable_label} {prompt_variable}.",
-            f"Show me how to use intake-esgf in python to list datasets with {variable_label} {prompt_variable}.",
-            f"How can I retrieve datasets that include {variable_label} {prompt_variable} using intake-esgf in python?",
-            f"Provide a python example using intake-esgf to find datasets containing {variable_label} {prompt_variable}.",
-            f"Write a python script with intake-esgf to search for datasets that have {variable_label} {prompt_variable}.",
-            f"I want to explore datasets with {variable_label} {prompt_variable} using intake-esgf in python. Can you assist?"
-        ]
-
-        responses = [
-            f"Sure! Here is how we can list all datasets that contain {variable_label} {prompt_variable} using intake-esgf in python:",
-            f"Here is how we can find datasets that include {variable_label} {prompt_variable} using intake-esgf in python:",
-            f"Of course! Here is how we can search for datasets with {variable_label} {prompt_variable} using intake-esgf in python:",
-            f"Certainly! Here is how we can write intake-esgf code in python to search for datasets containing {variable_label} {prompt_variable}:",
-            f"Sure! Here is a python snippet using intake-esgf to get datasets that have {variable_label} {prompt_variable}:",
-            f"Here you go! Here is how we can use intake-esgf in python to list datasets with {variable_label} {prompt_variable}:",
-            f"Absolutely! Here is how we can retrieve datasets that include {variable_label} {prompt_variable} using intake-esgf in python:",
-            f"Certainly! Here is a python example using intake-esgf to find datasets containing {variable_label} {prompt_variable}:",
-            f"Sure! Here is a python script with intake-esgf to search for datasets that have {variable_label} {prompt_variable}:",
-            f"Of course! Here is how we can explore datasets with {variable_label} {prompt_variable} using intake-esgf in python:"
-        ]
-        return [(prompt, f"{response}{code_template}") for prompt, response in zip(prompts, responses)]
+    # TODO: Implement normalization for table_id
+    def normalize_tables(self, user_input: str) -> str:
+        return ""
+    ################################################################
+    # Code Generation Functions grouped by facets and combinations #
+    ################################################################
 
     def generate_experiment_list_by_source(self, source_id: str) -> list[tuple[str, str]]:
         """
-        Generate intake code snippets that focus on listing experiments from a specific source.
+        Generate intake code snippets that focus on listing experiments from a specific source/model.
 
         Parameters
         ----------
@@ -306,7 +249,120 @@ for i, model in enumerate(models):
         ]
         return [(prompt, f"{response}{code_template}") for prompt, response in zip(prompts, responses)]
 
-    def generate_model_list_by_variables_scenarios(self, scenario: str, variable: str, scenario_label: str, variable_label: str) -> list[tuple[str, str]]:
+    def generate_dataset_list_by_institution(self, institution: str, institution_label: str) -> list[tuple[str, str]]:
+        """
+        Generate intake code snippets that focus on searching for datasets based only on institution and returning as list of tuples representing instructions and output code.
+        Will use a combination of single and multiple institutions for prompts to teach the model to generalize appropriately.
+
+        Parameters
+        ----------
+        institution: The institution or institutions to search for, formatted as a string.
+        institution_label: The label for the institution, singular or plural.
+        return: A list of tuples containing the instruction and output code snippet.
+        """
+        # Institution in prompt does not need quotes
+        prompt_institution = institution.replace('"', '')
+        code_template = f"""
+```python
+from intake_esgf import ESGFCatalog
+import pandas as pd
+
+# Set Pandas display options for better readability
+pd.set_option("display.max_rows", None)        # don't overwhelm terminal
+pd.set_option("display.max_columns", None)   # show all columns
+pd.set_option("display.width", None)         # wider view
+
+# initialize the catalog
+cat = ESGFCatalog()
+
+# specify the institutions to search for
+institutions = [{institution}]
+
+search_results = cat.search(
+    institution_id=institutions,
+)
+
+# remove ensemble members to view first entry per dataset and reduce clutter
+search_results.remove_ensembles()
+
+# print the resulting dataframe to show list of datasets found
+print(search_results.df)
+```
+"""
+        prompts = [
+            f"List all datasets that contain data from {institution_label} {prompt_institution} using intake-esgf in python.",
+            f"Using intake-esgf, how do I find datasets that include data from {institution_label} {prompt_institution}?",
+            f"I'm looking for datasets with data from {institution_label} {prompt_institution}. Can you provide intake-esgf code in python?",
+            f"Can you help me write intake-esgf code in python to search for datasets containing data from {institution_label} {prompt_institution}?",
+            f"I need a python snippet using intake-esgf to get datasets that have data from {institution_label} {prompt_institution}.",
+        ]
+
+        responses = [
+            f"Sure! Here is how we can list all datasets that contain data from {institution_label} {prompt_institution} using intake-esgf in python:",
+            f"Here is how we can find datasets that include data from {institution_label} {prompt_institution} using intake-esgf in python:",
+            f"Of course! Here is how we can search for datasets with data from {institution_label} {prompt_institution} using intake-esgf in python:",
+            f"Certainly! Here is how we can write intake-esgf code in python to search for datasets containing data from {institution_label} {prompt_institution}:",
+            f"Sure! Here is a python snippet using intake-esgf to get datasets that have data from {institution_label} {prompt_institution}:",
+        ]
+
+        return [(prompt, f"{response}{code_template}") for prompt, response in zip(prompts, responses)]
+
+    def generate_dataset_list_by_freq(self, freq: str) -> list[tuple[str, str]]:
+        """
+        Generate intake code snippets that focus on searching for datasets based only on frequency and returning as list of tuples representing instructions and output code.
+        Will use a combination of single and multiple frequencies for prompts to teach the model to generalize appropriately.
+
+        Parameters
+        ----------
+        freq: The frequency or frequencies to search for, formatted as a string.
+        return: A list of tuples containing the instruction and output code snippet.
+        """
+        prompt_freq = freq.replace('"', '')
+        code_freq = f'"{self.normalize_freq(freq)}"'
+        code_template = f"""
+```python
+from intake_esgf import ESGFCatalog
+import pandas as pd
+
+# Set Pandas display options for better readability
+pd.set_option("display.max_rows", None)        # don't overwhelm terminal
+pd.set_option("display.max_columns", None)   # show all columns
+pd.set_option("display.width", None)         # wider view
+
+# initialize the catalog
+cat = ESGFCatalog()
+
+# specify the frequency to search for
+institutions = [{code_freq}]
+
+search_results = cat.search(
+    frequency=frequency,
+)
+
+# remove ensemble members to view first entry per dataset and reduce clutter
+search_results.remove_ensembles()
+
+# print the resulting dataframe to show list of datasets found
+print(search_results.df)
+```
+"""
+        prompts = [
+            f"List all datasets that contain {prompt_freq} frequency using intake-esgf in python.",
+            f"Using intake-esgf, how do I find datasets that include {prompt_freq} frequency?",
+            f"I'm looking for datasets with {prompt_freq} frequency. Can you provide intake-esgf code in python?",
+            f"Can you help me write intake-esgf code in python to search for datasets containing {prompt_freq} frequency?",
+            f"I need a python snippet using intake-esgf to get datasets that have {prompt_freq} frequency.",
+        ]
+        responses = [
+            f"Sure! Here is how we can list all datasets that contain {prompt_freq} frequency using intake-esgf in python:",
+            f"Here is how we can find datasets that include {prompt_freq} frequency using intake-esgf in python:",
+            f"Of course! Here is how we can search for datasets with {prompt_freq} frequency using intake-esgf in python:",
+            f"Certainly! Here is how we can write intake-esgf code in python to search for datasets containing {prompt_freq} frequency:",
+            f"Sure! Here is a python snippet using intake-esgf to get datasets that have {prompt_freq} frequency:",
+        ]
+        return [(prompt, f"{response}{code_template}") for prompt, response in zip(prompts, responses)]
+
+    def generate_model_list_by_variable_scenario(self, scenario: str, variable: str, scenario_label: str, variable_label: str) -> list[tuple[str, str]]:
         """
         Generate intake code snippets that focus on searching for models based on variables and scenarios/experiments.
 
@@ -347,7 +403,7 @@ print(f"Models({{len(models)}} results):")
 for i, model in enumerate(models):
     print(f"{{i+1}}. {{model}}")
 ```
-    """
+"""
         prompts = [
             f"Name the models that have {prompt_scenario} {scenario_label} for {variable_label} {prompt_variable} using intake-esgf in python.",
             f"Using the help of intake-esgf, which models contain {prompt_variable} data under {prompt_scenario} {scenario_label}?",
@@ -362,6 +418,69 @@ for i, model in enumerate(models):
             f"Sure! Here is how we can list the models that contain {variable_label} {prompt_variable} for {prompt_scenario} {scenario_label} using intake-esgf in python:",
             f"Ok! Here is how we can retrieve all models for {prompt_scenario} {scenario_label} and {variable_label} {prompt_variable} using intake-esgf in python:",
             f"Of course! Here is how we can find what models support {prompt_variable} across {prompt_scenario} {scenario_label} using intake-esgf in python:"
+        ]
+
+        return [(prompt, f"{response}{code_template}") for prompt, response in zip(prompts, responses)]
+
+    def generate_dataset_list_by_variable_scenario(self, scenario: str, variable: str, scenario_label: str, variable_label: str) -> list[tuple[str, str]]:
+        """
+        Generate intake code snippets that focus on searching for datasets based on variables and scenarios/experiments.
+
+        Parameters
+        ----------
+        scenario: The scenario or scenarios to search for.
+        variable: The variable or variables to search for.
+        scenario_label: The label for the scenario, singular or plural.
+        variable_label: The label for the variable, singular or plural.
+
+        Returns
+        -------
+        list[tuples(str)]: A list of tuples containing the instruction and output code snippet.
+        """
+        prompt_scenario = scenario.replace('"', '')
+        prompt_variable = variable.replace('"', '')
+        code_template = f"""
+```python
+from intake_esgf import ESGFCatalog
+import pandas as pd
+
+# Set Pandas display options for better readability
+pd.set_option("display.max_rows", None)        # don't overwhelm terminal
+pd.set_option("display.max_columns", None)   # show all columns
+pd.set_option("display.width", None)         # wider view
+
+# initialize the catalog
+cat = ESGFCatalog()
+
+# specify the scenarios and variables to search for
+experiments = [{scenario}]
+variables = [{variable}]
+
+search_results = cat.search(
+    experiment_id=experiments,
+    variable_id=variables
+)
+
+# remove ensemble members to view first entry per dataset and reduce clutter
+search_results.remove_ensembles()
+
+# print the resulting dataframe to show list of datasets found
+print(search_results.df)
+```
+"""
+        prompts = [
+            f"List all datasets that contain {variable_label} {prompt_variable} for {prompt_scenario} {scenario_label} using intake-esgf in python.",
+            f"Using intake-esgf, how do I find datasets that include {variable_label} {prompt_variable} for {prompt_scenario} {scenario_label}?",
+            f"I'm looking for datasets with {variable_label} {prompt_variable} for {prompt_scenario} {scenario_label}. Can you provide intake-esgf code in python?",
+            f"Can you help me write intake-esgf code in python to search for datasets containing {variable_label} {prompt_variable} for {prompt_scenario} {scenario_label}?",
+            f"I need a python snippet using intake-esgf to get datasets that have {variable_label} {prompt_variable} for {prompt_scenario} {scenario_label}.",
+        ]
+        responses = [
+            f"Sure! Here is how we can list all datasets that contain {variable_label} {prompt_variable} for {prompt_scenario} {scenario_label} using intake-esgf in python:",
+            f"Absolutely! Here is how we can find datasets that include {variable_label} {prompt_variable} for {prompt_scenario} {scenario_label} using intake-esgf in python:",
+            f"Of course! Here is how we can search for datasets with {variable_label} {prompt_variable} for {prompt_scenario} {scenario_label} using intake-esgf in python:",
+            f"Certainly! Here is how we can write intake-esgf code in python to search for datasets containing {variable_label} {prompt_variable} for {prompt_scenario} {scenario_label}:",
+            f"Sure! Here is a python snippet using intake-esgf to get datasets that have {variable_label} {prompt_variable} for {prompt_scenario} {scenario_label}:",
         ]
 
         return [(prompt, f"{response}{code_template}") for prompt, response in zip(prompts, responses)]
@@ -451,6 +570,70 @@ for i, model in enumerate(models):
 
         return [(prompt, f"{response}{code_template}") for prompt, response in zip(prompts, responses)]
 
+    def generate_dataset_list_by_variable(self, variable: str, variable_label: str) -> list[tuple[str, str]]:
+        """
+        Generate intake code snippets that focus on searching for datasets based only on variables and returning as list of tuples representing instructions and output code.
+        Will use a combination of single and multiple variables for prompts to teach the model to generalize appropriately.
+
+        Parameters
+        ----------
+        variable: The variable or variables to search for, formatted as a string.
+        variable_label: The label for the variable, singular or plural.
+        return: A list of tuples containing the instruction and output code snippet.
+        """
+        prompt_variable = variable.replace('"', '')
+        code_template = f"""
+```python
+from intake_esgf import ESGFCatalog
+import pandas as pd
+
+# Set Pandas display options for better readability
+pd.set_option("display.max_rows", None)        # don't overwhelm terminal
+pd.set_option("display.max_columns", None)   # show all columns
+pd.set_option("display.width", None)         # wider view
+
+# initialize the catalog
+cat = ESGFCatalog()
+
+# define the criteria to search for
+variables = [{variable}]
+
+# search the catalog with specified constraints
+search_results = cat.search(
+    variable_id= variables
+)
+
+# print the resulting dataframe to show list of datasets found
+print(search_results.df)
+```
+"""
+        prompts = [
+            f"List all datasets that contain {variable_label} {prompt_variable} using intake-esgf in python.",
+            f"Using intake-esgf, how do I find datasets that include {variable_label} {prompt_variable}?",
+            f"I'm looking for datasets with {variable_label} {prompt_variable}. Can you provide intake-esgf code in python?",
+            f"Can you help me write intake-esgf code in python to search for datasets containing {variable_label} {prompt_variable}?",
+            f"I need a python snippet using intake-esgf to get datasets that have {variable_label} {prompt_variable}.",
+            f"Show me how to use intake-esgf in python to list datasets with {variable_label} {prompt_variable}.",
+            f"How can I retrieve datasets that include {variable_label} {prompt_variable} using intake-esgf in python?",
+            f"Provide a python example using intake-esgf to find datasets containing {variable_label} {prompt_variable}.",
+            f"Write a python script with intake-esgf to search for datasets that have {variable_label} {prompt_variable}.",
+            f"I want to explore datasets with {variable_label} {prompt_variable} using intake-esgf in python. Can you assist?"
+        ]
+
+        responses = [
+            f"Sure! Here is how we can list all datasets that contain {variable_label} {prompt_variable} using intake-esgf in python:",
+            f"Here is how we can find datasets that include {variable_label} {prompt_variable} using intake-esgf in python:",
+            f"Of course! Here is how we can search for datasets with {variable_label} {prompt_variable} using intake-esgf in python:",
+            f"Certainly! Here is how we can write intake-esgf code in python to search for datasets containing {variable_label} {prompt_variable}:",
+            f"Sure! Here is a python snippet using intake-esgf to get datasets that have {variable_label} {prompt_variable}:",
+            f"Here you go! Here is how we can use intake-esgf in python to list datasets with {variable_label} {prompt_variable}:",
+            f"Absolutely! Here is how we can retrieve datasets that include {variable_label} {prompt_variable} using intake-esgf in python:",
+            f"Certainly! Here is a python example using intake-esgf to find datasets containing {variable_label} {prompt_variable}:",
+            f"Sure! Here is a python script with intake-esgf to search for datasets that have {variable_label} {prompt_variable}:",
+            f"Of course! Here is how we can explore datasets with {variable_label} {prompt_variable} using intake-esgf in python:"
+        ]
+        return [(prompt, f"{response}{code_template}") for prompt, response in zip(prompts, responses)]
+
     def generate_model_list_by_variable_freq(self, variable: str, variable_label: str,  freq: str) -> list[tuple[str, str]]:
         """
         Generate intake code snippets that focus on searching for models based on variables and frequency.
@@ -482,7 +665,7 @@ frequency = [{code_freq}]
 
 # search the catalog for models with the specified variable
 search_results = cat.search(
-    variable_id=variables
+    variable_id=variables,
     frequency=frequency
 )
 
@@ -512,9 +695,307 @@ for i, model in enumerate(models):
 
         return [(prompt, f"{response}{code_template}") for prompt, response in zip(prompts, responses)]
 
+    def generate_dataset_list_by_variable_freq(self, variable: str, variable_label: str,  freq: str) -> list[tuple[str, str]]:
+        """
+        Generate intake code snippets that focus on searching for datasets based on variables and frequency.
+
+        Parameters
+        ----------
+        variable: The variable or variables to search for, formatted as a string.
+        variable_label: The label for the variable, singular or plural.
+        freq: The frequency to search for, formatted as a string.
+
+        Returns
+        -------
+        list[tuples(str)]: A list of tuples containing the instruction and output code snippet.
+        """
+
+        prompt_variable = variable.replace('"', '')
+        code_freq = f'"{self.normalize_freq(freq)}"'
+
+        code_template = f"""
+```python
+from intake_esgf import ESGFCatalog
+import pandas as pd
+
+# Set Pandas display options for better readability
+pd.set_option("display.max_rows", None)        # don't overwhelm terminal
+pd.set_option("display.max_columns", None)   # show all columns
+pd.set_option("display.width", None)         # wider view
+
+# initialize the catalog
+cat = ESGFCatalog()
+
+# specify variables and frequency to search for
+variables = [{variable}]
+frequency = [{code_freq}]
+
+# search the catalog for models with the specified variable
+search_results = cat.search(
+    variable_id=variables,
+    frequency=frequency
+)
+
+# remove ensemble members to view first entry per dataset and reduce clutter
+search_results.remove_ensembles()
+
+# print the resulting dataframe to show list of datasets found
+print(search_results.df)
+```"""
+
+        prompts = [
+            f"List all datasets that contain {variable_label} {prompt_variable} at {freq} frequency using intake-esgf in python.",
+            f"Using intake-esgf, how do I find datasets that include {variable_label} {prompt_variable} at {freq} frequency?",
+            f"I'm looking for datasets with {variable_label} {prompt_variable} at {freq} frequency. Can you provide intake-esgf code in python?",
+            f"Can you help me write intake-esgf code in python to search for datasets containing {variable_label} {prompt_variable} at {freq} frequency?",
+            f"I need a python snippet using intake-esgf to get datasets that have {variable_label} {prompt_variable} at {freq} frequency."
+        ]
+        responses = [
+            f"Sure! Here is how we can list all datasets that contain {variable_label} {prompt_variable} at {freq} frequency using intake-esgf in python:",
+            f"Here is how we can find datasets that include {variable_label} {prompt_variable} at {freq} frequency using intake-esgf in python:",
+            f"Of course! Here is how we can search for datasets with {variable_label} {prompt_variable} at {freq} frequency using intake-esgf in python:",
+            f"Certainly! Here is how we can write intake-esgf code in python to search for datasets containing {variable_label} {prompt_variable} at {freq} frequency:",
+            f"Sure! Here is a python snippet using intake-esgf to get datasets that have {variable_label} {prompt_variable} at {freq} frequency:"
+        ]
+
+        return [(prompt, f"{response}{code_template}") for prompt, response in zip(prompts, responses)]
+
+    def generate_dataset_list_by_variable_freq_institution(self, variable: str, variable_label: str,  freq: str, institution: str, institution_label: str) -> list[tuple[str, str]]:
+        """
+        Generate intake code snippets that focus on searching for datasets based on variables, frequency, and institution.
+
+        Parameters
+        ----------
+        variable: The variable or variables to search for, formatted as a string.
+        variable_label: The label for the variable, singular or plural.
+        freq: The frequency to search for, formatted as a string.
+        institution: The institution or institutions to search for, formatted as a string.
+        institution_label: The label for the institution, singular or plural.
+
+        Returns
+        -------
+        list[tuples(str)]: A list of tuples containing the instruction and output code snippet.
+        """
+
+        prompt_variable = variable.replace('"', '')
+        prompt_institution = institution.replace('"', '')
+        code_freq = f'"{self.normalize_freq(freq)}"'
+        code_template = f"""
+```python
+from intake_esgf import ESGFCatalog
+import pandas as pd
+
+# Set Pandas display options for better readability
+pd.set_option("display.max_rows", None)        # don't overwhelm terminal
+pd.set_option("display.max_columns", None)   # show all columns
+pd.set_option("display.width", None)         # wider view
+
+# initialize the catalog
+cat = ESGFCatalog()
+
+# specify variables, institutions and frequency to search for
+variables = [{variable}]
+institutions = [{institution}]
+frequency = [{code_freq}]
+
+# search the catalog for models with the specified variable
+search_results = cat.search(
+    variable_id=variables,
+    institution_id=institutions,
+    frequency=frequency
+)
+
+# remove ensemble members to view first entry per dataset and reduce clutter
+search_results.remove_ensembles()
+
+# print the resulting dataframe to show list of datasets found
+print(search_results.df)
+```
+"""
+        prompts = [
+            f"List all datasets that contain {variable_label} {prompt_variable} at {freq} frequency from {institution_label} {prompt_institution} using intake-esgf in python.",
+            f"Using intake-esgf, how do I find datasets that include {variable_label} {prompt_variable} at {freq} frequency from {institution_label} {prompt_institution}?",
+            f"I'm looking for datasets with {variable_label} {prompt_variable} at {freq} frequency from {institution_label} {prompt_institution}. Can you provide intake-esgf code in python?",
+            f"Can you help me write intake-esgf code in python to search for datasets containing {variable_label} {prompt_variable} at {freq} frequency from {institution_label} {prompt_institution}?",
+            f"I need a python snippet using intake-esgf to get datasets that have {variable_label} {prompt_variable} at {freq} frequency from {institution_label} {prompt_institution}.",
+        ]
+        responses = [
+            f"Sure! Here is how we can list all datasets that contain {variable_label} {prompt_variable} at {freq} frequency from {institution_label} {prompt_institution} using intake-esgf in python:",
+            f"Here is how we can find datasets that include {variable_label} {prompt_variable} at {freq} frequency from {institution_label} {prompt_institution} using intake-esgf in python:",
+            f"Of course! Here is how we can search for datasets with {variable_label} {prompt_variable} at {freq} frequency from {institution_label} {prompt_institution} using intake-esgf in python:",
+            f"Certainly! Here is how we can write intake-esgf code in python to search for datasets containing {variable_label} {prompt_variable} at {freq} frequency from {institution_label} {prompt_institution}:",
+            f"Sure! Here is a python snippet using intake-esgf to get datasets that have {variable_label} {prompt_variable} at {freq} frequency from {institution_label} {prompt_institution}:",
+        ]
+        return [(prompt, f"{response}{code_template}") for prompt, response in zip(prompts, responses)]
+
+    def generate_dataset_list_by_scenario(self, scenario: str, scenario_label: str) -> list[tuple[str, str]]:
+        """
+        Generate intake code snippets that focus on searching for datasets based only on scenarios/experiments and returning as list of tuples representing instructions and output code.
+
+        Parameters
+        ----------
+        scenario: The scenario or scenarios to search for, formatted as a string.
+        scenario_label: The label for the scenario, singular or plural.
+
+        Returns
+        -------
+        list[tuple[str, str]]: A list of tuples containing the instruction and output code snippet.
+        """
+        prompt_scenario = scenario.replace('"', '')
+        code_template = f"""
+from intake_esgf import ESGFCatalog
+import pandas as pd
+
+# Set Pandas display options for better readability
+pd.set_option("display.max_rows", None)        # don't overwhelm terminal
+pd.set_option("display.max_columns", None)   # show all columns
+pd.set_option("display.width", None)         # wider view
+
+# initialize the catalog
+cat = ESGFCatalog()
+
+# specify the scenarios/experiments to search for
+experiments = [{scenario}]
+
+search_results = cat.search(
+    experiment_id=experiments,
+)
+
+# remove ensemble members to view first entry per dataset and reduce clutter
+search_results.remove_ensembles()
+
+# print the resulting dataframe to show list of datasets found
+print(search_results.df)
+```
+"""
+        prompts = [
+            f"List all datasets that contain {scenario_label} {prompt_scenario} using intake-esgf in python.",
+            f"Using intake-esgf, how do I find datasets that include {prompt_scenario} {scenario_label}?",
+            f"I'm looking for datasets with {prompt_scenario} {scenario_label}. Can you provide intake-esgf code in python?",
+            f"Can you help me write intake-esgf code in python to search for datasets containing {scenario_label} {prompt_scenario}?",
+            f"I need a python snippet using intake-esgf to get datasets that have  {scenario_label} {prompt_scenario}.",
+        ]
+
+        responses = [
+            f"Sure! Here is how we can list all datasets that contain {scenario_label} {prompt_scenario} using intake-esgf in python:",
+            f"Absolutely! Here is how we can find datasets that include {prompt_scenario} {scenario_label} using intake-esgf in python:",
+            f"Of course! Here is how we can search for datasets with {prompt_scenario} {scenario_label} using intake-esgf in python:",
+            f"Certainly! Here is how we can write intake-esgf code in python to search for datasets containing {scenario_label} {prompt_scenario}:",
+            f"Sure! Here is a python snippet using intake-esgf to get datasets that have  {scenario_label} {prompt_scenario}:",
+        ]
+        return [(prompt, f"{response}{code_template}") for prompt, response in zip(prompts, responses)]
+
+    def generate_dataset_list_by_source(self, source: str, source_label: str) -> list[tuple[str, str]]:
+        """
+        Generate intake code snippets that focus on searching for datasets based only on source_id and returning as list of tuples representing instructions and output code.
+
+        Parameters
+        ----------
+        source: The source_id to search for, formatted as a string.
+
+        Returns
+        -------
+        list[tuple[str, str]]: A list of tuples containing the instruction and output code snippet.
+        """
+        # The source name does not need quotes in the actual prompt so we save a different version for the prompt and code snippet
+        prompt_source = source.replace('"', '')
+        code_template = f"""
+```python
+from intake_esgf import ESGFCatalog
+import pandas as pd
+
+# Set Pandas display options for better readability
+pd.set_option("display.max_rows", None)        # don't overwhelm terminal
+pd.set_option("display.max_columns", None)   # show all columns
+pd.set_option("display.width", None)         # wider view
+
+# initialize the catalog
+cat = ESGFCatalog()
+
+# specify the sources to search for
+sources = [{source}]
+
+search_results = cat.search(
+    source_id=sources,
+)
+
+# remove ensemble members to view first entry per dataset and reduce clutter
+search_results.remove_ensembles()
+
+# print the resulting dataframe to show list of datasets found
+print(search_results.df)
+```
+"""
+        prompts = [
+            f"List all datasets that contain {source_label} {prompt_source} using intake-esgf in python.",
+            f"Using intake-esgf, how do I find datasets that include {prompt_source} {source_label}?",
+            f"I'm looking for datasets with {source_label} {prompt_source}. Can you provide intake-esgf code in python?",
+            f"Can you help me write intake-esgf code in python to search for datasets containing {source_label} {prompt_source}?",
+            f"I need a python snippet using intake-esgf to get datasets that have {source_label} {prompt_source}.",
+        ]
+
+        responses = [
+            f"Sure! Here is how we can list all datasets that contain {source_label} {prompt_source} using intake-esgf in python:",
+            f"Absolutely! Here is how we can find datasets that include {prompt_source} {source_label} using intake-esgf in python:",
+            f"Of course! Here is how we can search for datasets with {source_label} {prompt_source} using intake-esgf in python:",
+            f"Certainly! Here is how we can write intake-esgf code in python to search for datasets containing {source_label} {prompt_source}:",
+            f"Sure! Here is a python snippet using intake-esgf to get datasets that have {source_label} {prompt_source}:",
+        ]
+        return [(prompt, f"{response}{code_template}") for prompt, response in zip(prompts, responses)]
+
+    # TODO: Must add call to function in run function and create prompts and responses
+    def generate_dataset_list_by_source_variable(self, source: str, variable: str, source_label: str, variable_label: str) -> list[tuple[str, str]]:
+        """
+        Generate intake code snippets that focus on searching for datasets based on source_id and variables.
+
+        Parameters
+        ----------
+        source: The source_id to search for, formatted as a string.
+        variable: The variable or variables to search for, formatted as a string.
+        source_label: The label for the source, singular or plural.
+        variable_label: The label for the variable, singular or plural.
+
+        Returns
+        -------
+        list[tuples(str)]: A list of tuples containing the instruction and output code snippet.
+        """
+        prompt_source = source.replace('"', '')
+        prompt_variable = variable.replace('"', '')
+
+        code_template = f""""""
+        return []
+
     # Main Run Function
     def run(self):
+        # Hold all snippets in this list
         all_snippets = []
+
+        # Define sets of scenarios, variables, and frequencies to generate combinations
+        institution_sets = [
+            ["NCAR"],
+            ["NCC"],
+            ["MIROC"],
+            ["DOE"],
+            ["IPSL"],
+            ["E3SM-Project"],
+            ["E3SM-Project", "MOHC"],
+            ["UCI", "MRI", "CAS"],
+            ["NASA-GISS", "CCCma", "CSIRO"],
+            ["NIMS-KMA", "CCCma", "CSIRO",
+                "DOE", "MIROC", "IPSL"]
+        ]
+        source_sets = [
+            ["CESM2"],
+            ["CanESM5"],
+            ["ACCESS-CM2"],
+            ["E3SM-1-0"],
+            ["MIROC6"],
+            ["IPSL-CM6A-LR"],
+            ["CESM2", "CanESM5"],
+            ["CESM2", "CanESM5", "ACCESS-CM2"],
+            ["NorCPM1", "CanESM5", "ACCESS-CM2",
+                "E3SM-1-0", "MIROC6", "IPSL-CM6A-LR"]
+        ]
         scenario_sets = [
             ["ssp126", "ssp245", "ssp370", "ssp585", "historical"],
             ["ssp126", "ssp245", "ssp370", "ssp585"],
@@ -525,7 +1006,6 @@ for i, model in enumerate(models):
             ["ssp585"],
             ["historical"]
         ]
-
         variable_sets = [
             ["gpp"],                       # single
             ["tas"],                       # single
@@ -543,7 +1023,6 @@ for i, model in enumerate(models):
             ["tos", "evspsbl"],            # pair (ocean + rare)
             ["tas", "pr", "gpp", "rsds", "evspsbl"]  # quintuple
         ]
-
         freq_sets = [
             "hourly",    # sampled hourly #not the actual key word but will be mapped to 1hr in the code snippet
             "1hr",
@@ -551,21 +1030,63 @@ for i, model in enumerate(models):
             "6hr",    # 6 hour mean sample
             "day",
             "daily",    # daily mean samples
-            "dec",    # decadal mean samples
+            "dec",
+            "decadal",    # decadal mean samples
             "fx",     # fixed (time invariant) field
             "mon",
             "monthly",    # monthly mean samples
-            "yr",     # annual mean samples
-            "yrPt"    # sampled yearly, at specified time point within the time period
+            "yr",
+            "yearly",
+            "annual",     # annual mean samples
+            "yrPt",    # sampled yearly, at specified time point within the time period
         ]
 
+        # Single variables
+        # freq only
+        for freq in freq_sets:
+            all_snippets += (self.generate_dataset_list_by_freq(freq))
+
+        # Institution only
+        for institution in institution_sets:
+            institution_label = self.plural_label(
+                institution, "institution", "institutions")
+            all_snippets += (self.generate_model_list_by_institution(
+                '"{0}"'.format('", "'.join(institution)), institution_label))
+
+        # Variable only
         for variable in variable_sets:
             # To see if we need plural or singular labels
             variable_label = self.plural_label(
                 variable, "variable", "variables")
             all_snippets += (self.generate_model_list_by_variable(
                 '"{0}"'.format('", "'.join(variable)), variable_label))
+            # generate dataset snippets
+            all_snippets += (self.generate_dataset_list_by_variable(
+                '"{0}"'.format('", "'.join(variable)), variable_label))
 
+        # Source ID
+        # FIXME: - also need to adjust possibly remove and add to loop below to use source_sets instead of pulling from CVs
+        sources = self.get_source_ids()
+        for source in sources:
+            source_id = f"{source}"
+            all_snippets += (
+                self.generate_experiment_list_by_source(source_id))
+
+        # alternate source ID from list instead of pulling from CVs
+        for source in source_sets:
+            source_label = self.plural_label(
+                source, "source", "sources")
+            all_snippets += self.generate_dataset_list_by_source(
+                '"{0}"'.format('", "'.join(source)), source_label)
+
+        # Scenario/Experiment only
+        for scenario in scenario_sets:
+            scenario_label = self.plural_label(
+                scenario, "scenario", "scenarios")
+            all_snippets += (self.generate_dataset_list_by_scenario(
+                '"{0}"'.format('", "'.join(scenario)), scenario_label))
+
+        # Scenario + Variable
         for scenario in scenario_sets:
             for variable in variable_sets:
                 # To see if we need plural or singular labels
@@ -573,47 +1094,55 @@ for i, model in enumerate(models):
                     scenario, "scenario", "scenarios")
                 variable_label = self.plural_label(
                     variable, "variable", "variables")
-                all_snippets += (self.generate_model_list_by_variables_scenarios(
+                # call functions to generate snippets
+                all_snippets += (self.generate_model_list_by_variable_scenario(
+                    '"{0}"'.format('", "'.join(scenario)), '"{0}"'.format('", "'.join(variable)), scenario_label, variable_label))
+                all_snippets += (self.generate_dataset_list_by_variable_scenario(
                     '"{0}"'.format('", "'.join(scenario)), '"{0}"'.format('", "'.join(variable)), scenario_label, variable_label))
 
-        # Generate intake code snippets for each source ID
-        sources = self.get_source_ids()
-        for source in sources:
-            source_id = f"{source}"
-            all_snippets += (
-                self.generate_experiment_list_by_source(source_id))
-
         # Generating frequency bsed snippets
-        # 1. Freq + variable
+        # 1. Freq + variable:
+        # generate model list by variable + freq, dataset list by variable + freq
         for freq in freq_sets:
             for variable in variable_sets:
                 # To see if we need plural or singular labels
                 variable_label = self.plural_label(
                     variable, "variable", "variables")
+                # call functions to generate snippets
                 all_snippets += (self.generate_model_list_by_variable_freq(
                     '"{0}"'.format('", "'.join(variable)), variable_label, freq))
+                all_snippets += (self.generate_dataset_list_by_variable_freq(
+                    '"{0}"'.format('", "'.join(variable)), variable_label, freq))
 
+        # TODO: TEST
+        # 2. Freq + variable + institution:
+        for freq in freq_sets:
+            for variable in variable_sets:
+                for institution in institution_sets:
+                    # To see if we need plural or singular labels
+                    variable_label = self.plural_label(
+                        variable, "variable", "variables")
+                    institution_label = self.plural_label(
+                        institution, "institution", "institutions")
+                    # call functions to generate snippets
+                    all_snippets += (self.generate_dataset_list_by_variable_freq_institution(
+                        '"{0}"'.format('", "'.join(variable)), variable_label, freq, '"{0}"'.format('", "'.join(institution)), institution_label))
+
+        # List all category - Note: not practically useful but necessary for training
         # List of all variables
         all_snippets += (self.generate_list_all_variables())
-
         # List of all models
         all_snippets += (self.generate_list_all_models())
-
-        # generate dataset snippets
-        for variable in variable_sets:
-            # To see if we need plural or singular labels
-            variable_label = self.plural_label(
-                variable, "variable", "variables")
-            all_snippets += (self.generate_dataset_list_by_variable(
-                '"{0}"'.format('", "'.join(variable)), variable_label))
 
         # Write all snippets to file
         self.snippets_to_file(all_snippets)
         print(f"Snippets written to data/intake_outputs.jsonl")
         print(f"Total snippets generated: {len(all_snippets)}")
-##########################################################################################################################################
-# Main function to run the IntakeCodeGenerator
-##########################################################################################################################################
+
+
+################################################
+# Main function to run the IntakeCodeGenerator #
+################################################
 
 
 def main():

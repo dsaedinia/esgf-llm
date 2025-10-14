@@ -1,24 +1,12 @@
 from intake_esgf import ESGFCatalog
 import pandas as pd
+# pd.set_option("display.max_rows", None)        # don't overwhelm terminal
+# pd.set_option("display.max_columns", None)   # show all columns
+# pd.set_option("display.width", None)         # wider view
 
-# Set Pandas display options for better readability
-pd.set_option("display.max_rows", None)        # don’t overwhelm terminal
-pd.set_option("display.max_columns", None)   # show all columns
-pd.set_option("display.width", None)         # wider view
 
-# initialize the catalog
-cat = ESGFCatalog()
+cat = ESGFCatalog().search(data_node='esgf-node.ornl.gov', variable_id=['gpp', 'tas', 'pr'], experiment_id=["historical", "ssp585"], table_id=[
+    'Amon', 'Lmon'], source_id=['CESM2', 'CanESM5', 'ACCESS-CM2'])
 
-# define the criteria to search for
-variables = ["tas", "ta"]
-
-# search the catalog with specified constraints
-search_results = cat.search(
-    variable_id="tas",
-    experiment_id="historical",
-    source_id="CanESM5",
-    table_id="Amon"
-)
-
-# print the resulting dataframe to show list of datasets found
-print(search_results.df)
+cat.remove_ensembles()
+print(cat.df)
