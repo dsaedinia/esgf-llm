@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "huggingface-hub>=0.35.0",
     "intake-esgf>=2025.7.16",
     "jupyter>=1.1.1",
     "open-webui>=0.6.5",

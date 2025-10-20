@@ -1,5 +1,9 @@
 import json
 import os
+import random
+
+SEED = 42
+SAMPLESIZE = 600
 
 
 class IntakeCodeGenerator:
@@ -11,6 +15,15 @@ class IntakeCodeGenerator:
     ####################
     # Helper Functions #
     ####################
+
+    def sub_sampler(self, snippets: list[tuple[str, str]], limit: int, seed: int = SEED) -> list[tuple[str, str]]:
+        if seed != 0:
+            random.seed(seed)
+        # cap snippets by limit
+        if len(snippets) <= limit:
+            return snippets
+        # otherwise subsample to the limit
+        return random.sample(snippets, limit)
 
     def get_source_ids(self):
         with open(self.input_path, "r") as f:
@@ -928,7 +941,7 @@ print(search_results.df)
 """
         prompts = [
             f"List all datasets that contain {source_label} {prompt_source} using intake-esgf in python.",
-            f"Using intake-esgf, how do I find datasets that include {prompt_source} {source_label}?",
+            f"Using intake-esgf, how do I find datasets that include {source_label} {prompt_source}?",
             f"I'm looking for datasets with {source_label} {prompt_source}. Can you provide intake-esgf code in python?",
             f"Can you help me write intake-esgf code in python to search for datasets containing {source_label} {prompt_source}?",
             f"I need a python snippet using intake-esgf to get datasets that have {source_label} {prompt_source}.",
@@ -936,7 +949,7 @@ print(search_results.df)
 
         responses = [
             f"Sure! Here is how we can list all datasets that contain {source_label} {prompt_source} using intake-esgf in python:",
-            f"Absolutely! Here is how we can find datasets that include {prompt_source} {source_label} using intake-esgf in python:",
+            f"Absolutely! Here is how we can find datasets that include {source_label} {prompt_source} using intake-esgf in python:",
             f"Of course! Here is how we can search for datasets with {source_label} {prompt_source} using intake-esgf in python:",
             f"Certainly! Here is how we can write intake-esgf code in python to search for datasets containing {source_label} {prompt_source}:",
             f"Sure! Here is a python snippet using intake-esgf to get datasets that have {source_label} {prompt_source}:",
@@ -1041,7 +1054,7 @@ print(search_results.df)
             "yrPt",    # sampled yearly, at specified time point within the time period
         ]
 
-        # Single variables
+        # # Single variables
         # freq only
         for freq in freq_sets:
             all_snippets += (self.generate_dataset_list_by_freq(freq))
@@ -1050,7 +1063,7 @@ print(search_results.df)
         for institution in institution_sets:
             institution_label = self.plural_label(
                 institution, "institution", "institutions")
-            all_snippets += (self.generate_model_list_by_institution(
+            all_snippets += (self.generate_dataset_list_by_institution(
                 '"{0}"'.format('", "'.join(institution)), institution_label))
 
         # Variable only
@@ -1065,12 +1078,14 @@ print(search_results.df)
                 '"{0}"'.format('", "'.join(variable)), variable_label))
 
         # Source ID
-        # FIXME: - also need to adjust possibly remove and add to loop below to use source_sets instead of pulling from CVs
+        # FIXME: - Still need to just move everything to the bottom but have implemented a cap for now
+        temp_snippets = []
         sources = self.get_source_ids()
         for source in sources:
             source_id = f"{source}"
-            all_snippets += (
+            temp_snippets += (
                 self.generate_experiment_list_by_source(source_id))
+        all_snippets += self.sub_sampler(temp_snippets, SAMPLESIZE)
 
         # alternate source ID from list instead of pulling from CVs
         for source in source_sets:
@@ -1103,19 +1118,22 @@ print(search_results.df)
         # Generating frequency bsed snippets
         # 1. Freq + variable:
         # generate model list by variable + freq, dataset list by variable + freq
+        temp1, temp2 = [], []
         for freq in freq_sets:
             for variable in variable_sets:
                 # To see if we need plural or singular labels
                 variable_label = self.plural_label(
                     variable, "variable", "variables")
                 # call functions to generate snippets
-                all_snippets += (self.generate_model_list_by_variable_freq(
+                temp1 += (self.generate_model_list_by_variable_freq(
                     '"{0}"'.format('", "'.join(variable)), variable_label, freq))
-                all_snippets += (self.generate_dataset_list_by_variable_freq(
+                temp2 += (self.generate_dataset_list_by_variable_freq(
                     '"{0}"'.format('", "'.join(variable)), variable_label, freq))
+        all_snippets += self.sub_sampler(temp1, 600)
+        all_snippets += self.sub_sampler(temp2, 600)
 
-        # TODO: TEST
         # 2. Freq + variable + institution:
+        temp_snippets = []
         for freq in freq_sets:
             for variable in variable_sets:
                 for institution in institution_sets:
@@ -1125,15 +1143,15 @@ print(search_results.df)
                     institution_label = self.plural_label(
                         institution, "institution", "institutions")
                     # call functions to generate snippets
-                    all_snippets += (self.generate_dataset_list_by_variable_freq_institution(
-                        '"{0}"'.format('", "'.join(variable)), variable_label, freq, '"{0}"'.format('", "'.join(institution)), institution_label))
+                    temp_snippets += (self.generate_dataset_list_by_variable_freq_institution('"{0}"'.format('", "'.join(
+                        variable)), variable_label, freq, '"{0}"'.format('", "'.join(institution)), institution_label))
+        all_snippets += self.sub_sampler(temp_snippets, limit=600)
 
         # List all category - Note: not practically useful but necessary for training
         # List of all variables
         all_snippets += (self.generate_list_all_variables())
         # List of all models
         all_snippets += (self.generate_list_all_models())
-
         # Write all snippets to file
         self.snippets_to_file(all_snippets)
         print(f"Snippets written to data/intake_outputs.jsonl")
@@ -1152,3 +1170,15 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# USED FOR TESTING ONLY
+# Test prints
+# count = 0
+# for snippet in all_snippets:
+#     print("Prompt:")
+#     print(snippet[0])
+#     print("\nCode Snippet:")
+#     print(snippet[1])
+#     print("\n" + "="*80 + "\n")
+#     count += 1
+# print(f"Total snippets generated: {count}")
