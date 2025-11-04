@@ -110,6 +110,9 @@ class IntakeCodeGenerator:
         """
         code_template = f"""
 ```python
+# Task: Generate list of experiments for the given source/models
+
+# import necessary libraries
 from intake_esgf import ESGFCatalog
 
 # initialize the catalog
@@ -157,6 +160,9 @@ for i, experiment in enumerate(experiments):
         """
         code_template = f"""
 ```python
+# Task: Generate list of all variables available in the ESGF catalog
+
+# import necessary libraries
 from intake_esgf import ESGFCatalog
 
 # initialize the catalog
@@ -219,6 +225,7 @@ for i, variable in enumerate(variables):
         """
         code_template = f"""
 ```python
+# Task: Generate list of all models available in the ESGF catalog
 from intake_esgf import ESGFCatalog
 
 # initialize the catalog
@@ -277,6 +284,9 @@ for i, model in enumerate(models):
         prompt_institution = institution.replace('"', '')
         code_template = f"""
 ```python
+# Task: Generate list of all datasets from the given institution(s)
+
+# import necessary libraries
 from intake_esgf import ESGFCatalog
 import pandas as pd
 
@@ -334,6 +344,9 @@ print(search_results.df)
         code_freq = f'"{self.normalize_freq(freq)}"'
         code_template = f"""
 ```python
+# Task: Generate list of all datasets for the given frequency
+
+# import necessary libraries
 from intake_esgf import ESGFCatalog
 import pandas as pd
 
@@ -394,6 +407,9 @@ print(search_results.df)
         prompt_variable = variable.replace('"', '')
         code_template = f"""
 ```python
+# Task: Generate list of all source/models for the given variable(s) and scenario(s) 
+
+# import necessary libraries
 from intake_esgf import ESGFCatalog
 
 # initialize the catalog
@@ -454,6 +470,9 @@ for i, model in enumerate(models):
         prompt_variable = variable.replace('"', '')
         code_template = f"""
 ```python
+# Task: Generate list of all datasets for the given variable(s) and scenario(s) 
+
+# import necessary libraries
 from intake_esgf import ESGFCatalog
 import pandas as pd
 
@@ -513,6 +532,9 @@ print(search_results.df)
         prompt_variable = variable.replace('"', '')
         code_template = f"""
 ```python
+# Task: Generate list of all source/models for the given variable(s)
+
+# import necessary libraries
 from intake_esgf import ESGFCatalog
 
 # initialize the catalog
@@ -597,6 +619,9 @@ for i, model in enumerate(models):
         prompt_variable = variable.replace('"', '')
         code_template = f"""
 ```python
+# Task: Generate list of all datasets for the given variable(s)
+
+# import necessary libraries
 from intake_esgf import ESGFCatalog
 import pandas as pd
 
@@ -667,6 +692,9 @@ print(search_results.df)
 
         code_template = f"""
 ```python
+# Task: Generate list of all source/models for the given variable(s) and frequency
+
+# import necessary libraries
 from intake_esgf import ESGFCatalog
 
 # initialize the catalog
@@ -728,6 +756,9 @@ for i, model in enumerate(models):
 
         code_template = f"""
 ```python
+# Task: Generate list of all datasets for the given variable(s) and frequency
+
+# import necessary libraries
 from intake_esgf import ESGFCatalog
 import pandas as pd
 
@@ -795,6 +826,9 @@ print(search_results.df)
         code_freq = f'"{self.normalize_freq(freq)}"'
         code_template = f"""
 ```python
+# Task: Generate list of all datasets for the given variable(s), frequency, and institution(s)
+
+# import necessary libraries
 from intake_esgf import ESGFCatalog
 import pandas as pd
 
@@ -856,6 +890,10 @@ print(search_results.df)
         """
         prompt_scenario = scenario.replace('"', '')
         code_template = f"""
+```python
+# Task: Generate list of all datasets for the given scenario/experiment(s)
+
+# import necessary libraries
 from intake_esgf import ESGFCatalog
 import pandas as pd
 
@@ -914,6 +952,9 @@ print(search_results.df)
         prompt_source = source.replace('"', '')
         code_template = f"""
 ```python
+# Task: Generate list of all datasets for the given source/model(s)
+
+# import necessary libraries
 from intake_esgf import ESGFCatalog
 import pandas as pd
 
