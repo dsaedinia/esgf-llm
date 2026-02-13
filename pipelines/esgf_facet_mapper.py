@@ -1,12 +1,28 @@
 from typing import List, Optional
+
 from pydantic import BaseModel
 
 # --- Canonical ESGF facet mappings ---
 VARIABLE_MAP = {
-    "tas": ["tas", "surface air temperature", "air surface temperature", "near-surface air temperature"],
+    "tas": [
+        "tas",
+        "surface air temperature",
+        "air surface temperature",
+        "near-surface air temperature",
+    ],
     "ta": ["ta", "air_temperature", "air temperature", "air temp"],
-    "tasmax": ["tasmax", "maximum daily air temperature", "daily max temp", "maximum air temperature"],
-    "tasmin": ["tasmin", "minimum daily air temperature", "daily min temp", "minimum air temperature"],
+    "tasmax": [
+        "tasmax",
+        "maximum daily air temperature",
+        "daily max temp",
+        "maximum air temperature",
+    ],
+    "tasmin": [
+        "tasmin",
+        "minimum daily air temperature",
+        "daily min temp",
+        "minimum air temperature",
+    ],
     "pr": ["pr", "precipitation", "precipitation flux", "rainfall"],
     "prc": ["prc", "convective precipitation"],
     "psl": ["psl", "sea level pressure", "surface pressure"],
@@ -15,32 +31,142 @@ VARIABLE_MAP = {
     "es": ["es", "bare soil evaporation", "soil evaporation"],
     "mrso": ["mrso", "total soil moisture content", "soil moisture"],
     "wa": ["wa", "upward air velocity", "air velocity"],
-    "gpp": ["gpp", "gross primary production"],
+    "gpp": [
+        "gpp",
+        "gross primary production",
+        "gross primary productivity",
+        "photosynthesis",
+    ],
     "zg": ["zg", "geopotential height"],
-    "rsds": ["rsds", "surface downwelling shortwave radiation", "downward shortwave radiation"],
+    "rsds": [
+        "rsds",
+        "surface downwelling shortwave radiation",
+        "downward shortwave radiation",
+    ],
     "hus": ["hus", "specific humidity", "humidity"],
-    "sfcWind": ["sfcWind", "surface wind speed", "surface wind", "wind speed at surface", "daily mean near-surface wind speed", "near-surface wind speed"],
-    "hfss": ["hfss", "surface sensible heat flux", "sensible heat flux at surface", "surface sensible heat flux", "surface heat flux"],
-    "hfls": ["hfls", "surface latent heat flux", "latent heat flux at surface", "surface latent heat flux"],
-    "clt": ["clt", "total cloud coverage", "total cloud coverage percentage", "cloud coverage", "cloud area fraction"],
-    "wap": ["wap", "vertical air velocity", "vertical velocity in pressure coordinates", "langrangian tendency of air pressure"],
-    "rlut": ["rlut", "toa outgoing longwave radiation", "top of atmosphere outgoing longwave radiation"],
-    "rsds": ["rsds", "surface downwelling shortwave radiation", "downward shortwave radiation at surface", "surface downwelling shortwave flux in the air", "surface radiation"],
-    "uas": ["uas", "eastward near-surface wind", "eastward near-surface wind component", "eastward wind"],
-    "vas": ["vas", "northward near-surface wind", "northward near-surface wind component", "northward wind"],
-    "huss": ["huss", "specific humidity near surface", "near-surface specific humidity", "near surface humidity"],
+    "sfcWind": [
+        "sfcWind",
+        "surface wind speed",
+        "surface wind",
+        "wind speed at surface",
+        "daily mean near-surface wind speed",
+        "near-surface wind speed",
+    ],
+    "hfss": [
+        "hfss",
+        "surface sensible heat flux",
+        "sensible heat flux at surface",
+        "surface sensible heat flux",
+        "surface heat flux",
+    ],
+    "hfls": [
+        "hfls",
+        "surface latent heat flux",
+        "latent heat flux at surface",
+        "surface latent heat flux",
+    ],
+    "clt": [
+        "clt",
+        "total cloud coverage",
+        "total cloud coverage percentage",
+        "cloud coverage",
+        "cloud area fraction",
+    ],
+    "wap": [
+        "wap",
+        "vertical air velocity",
+        "vertical velocity in pressure coordinates",
+        "langrangian tendency of air pressure",
+    ],
+    "rlut": [
+        "rlut",
+        "toa outgoing longwave radiation",
+        "top of atmosphere outgoing longwave radiation",
+    ],
+    "rsds": [
+        "rsds",
+        "surface downwelling shortwave radiation",
+        "downward shortwave radiation at surface",
+        "surface downwelling shortwave flux in the air",
+        "surface radiation",
+    ],
+    "uas": [
+        "uas",
+        "eastward near-surface wind",
+        "eastward near-surface wind component",
+        "eastward wind",
+    ],
+    "vas": [
+        "vas",
+        "northward near-surface wind",
+        "northward near-surface wind component",
+        "northward wind",
+    ],
+    "huss": [
+        "huss",
+        "specific humidity near surface",
+        "near-surface specific humidity",
+        "near surface humidity",
+    ],
     "ps": ["ps", "surface air pressure", "pressure at surface", "surface pressure"],
-    "prsn": ["prsn", "snowfall", "snow precipitation", "snowfall flux", "rate of snowfall"],
-    "ts": ["ts", "surface temperature", "lower boundary temperature", "land surface temperature"],
-    "rsut": ["rsut", "toa outgoing shortwave radiation", "top of atmosphere outgoing shortwave radiation"],
-    "rsus": ["rsus", "surface upwelling shortwave radiation", "upward shortwave radiation at surface", "surface upwelling shortwave flux in the air"],
-    "rlus": ["rlus", "surface upwelling longwave radiation", "upward longwave radiation at surface", "surface upwelling longwave flux in the air"],
-    "rsdt": ["rsdt", "toa downwelling shortwave radiation", "top of atmosphere downwelling shortwave radiation"],
-    "rlutcs": ["rlutcs", "toa outgoing longwave radiation clear sky", "top of atmosphere outgoing longwave radiation clear sky"],
+    "prsn": [
+        "prsn",
+        "snowfall",
+        "snow precipitation",
+        "snowfall flux",
+        "rate of snowfall",
+    ],
+    "ts": [
+        "ts",
+        "surface temperature",
+        "lower boundary temperature",
+        "land surface temperature",
+    ],
+    "rsut": [
+        "rsut",
+        "toa outgoing shortwave radiation",
+        "top of atmosphere outgoing shortwave radiation",
+    ],
+    "rsus": [
+        "rsus",
+        "surface upwelling shortwave radiation",
+        "upward shortwave radiation at surface",
+        "surface upwelling shortwave flux in the air",
+    ],
+    "rlus": [
+        "rlus",
+        "surface upwelling longwave radiation",
+        "upward longwave radiation at surface",
+        "surface upwelling longwave flux in the air",
+    ],
+    "rsdt": [
+        "rsdt",
+        "toa downwelling shortwave radiation",
+        "top of atmosphere downwelling shortwave radiation",
+    ],
+    "rlutcs": [
+        "rlutcs",
+        "toa outgoing longwave radiation clear sky",
+        "top of atmosphere outgoing longwave radiation clear sky",
+    ],
     "hur": ["hur", "relative humidity", "relative humidity percentage"],
-    "evspsbl": ["evspsbl", "evapotranspiration", "total surface evaporation", "evaporation at surface", "evaporation with transpiration"],
-    "tauu": ["tauu", "surface downward eastward stress", "downward eastward wind stress at surface"],
-    "tauv": ["tauv", "surface downward northward stress", "downward northward wind stress at surface"],
+    "evspsbl": [
+        "evspsbl",
+        "evapotranspiration",
+        "total surface evaporation",
+        "evaporation at surface",
+        "evaporation with transpiration",
+    ],
+    "tauu": [
+        "tauu",
+        "surface downward eastward stress",
+        "downward eastward wind stress at surface",
+    ],
+    "tauv": [
+        "tauv",
+        "surface downward northward stress",
+        "downward northward wind stress at surface",
+    ],
     "tos": ["tos", "sea surface temperature", "ocean surface temperature"],
     # Add other variables as needed in chunks from most datasets to least
 }
@@ -50,10 +176,23 @@ SCENARIO_MAP = {
     "ssp245": ["ssp2-4.5", "ssp245", "2.45 scenario", "medium forcing scenario"],
     "ssp370": ["ssp3-7.0", "ssp370", "3.70 scenario", "high forcing scenario"],
     "ssp585": ["ssp5-8.5", "ssp585", "5.85 scenario", "very high forcing scenario"],
-    "dcppA-hindcast": ["dcppA-hindcast", "hindcast with historical forcing", "decadal hindcast"],
-    "pdSST-futArcSIC": ["pdSST-futArcSIC", "future arctic sea ice conditions with present-day sst", "Atmosphere time slice with present day SST and future Arctic SIC", "future sea ice loss with present-day conditions"],
-
-
+    "dcppA-hindcast": [
+        "dcppA-hindcast",
+        "hindcast with historical forcing",
+        "decadal hindcast",
+    ],
+    "pdSST-futArcSIC": [
+        "pdSST-futArcSIC",
+        "future arctic sea ice conditions with present-day sst",
+        "Atmosphere time slice with present day SST and future Arctic SIC",
+        "future sea ice loss with present-day conditions",
+    ],
+    "historical": [
+        "historical",
+        "historical forcing",
+        "historical climate data",
+        "pre industrial scenario",
+    ],
 }
 
 INSTITUTION_MAP = {
@@ -61,18 +200,41 @@ INSTITUTION_MAP = {
     "NCAR": ["national center for atmospheric research", "ncar"],
     "CESM": ["community earth system model", "cesm"],
     "IPSL": ["institut pierre-simon laplace", "ipsl", "ipsl-cm"],
-    "UCI": ["university of california, irvine", "uc irvine", "uci"]
+    "UCI": ["university of california, irvine", "uc irvine", "uci"],
     # Add other institutions as needed
 }
 
 FREQUENCY_MAP = {
     "1hr": ["1hr", "1 hour", "1-hour", "hourly", "hour", "one hour"],
-    "1hrCM": ["1hrCM", "1 hour means", "monthly-mean diurnal cycle resolving each day into 1-hour means", "hourly means over month"],
-    "1hrPt": ["1hrPt", "1 hour point", "1-hourly point", "hourly point", "one hour point"],
+    "1hrCM": [
+        "1hrCM",
+        "1 hour means",
+        "monthly-mean diurnal cycle resolving each day into 1-hour means",
+        "hourly means over month",
+    ],
+    "1hrPt": [
+        "1hrPt",
+        "1 hour point",
+        "1-hourly point",
+        "hourly point",
+        "one hour point",
+    ],
     "3hr": ["3hr", "3 hour", "3-hour", "3 hourly", "3 hour mean", "three hour"],
-    "3hrPt": ["3hrPt", "3 hour point", "3-hourly point", "3 hourly point", "three hour point"],
+    "3hrPt": [
+        "3hrPt",
+        "3 hour point",
+        "3-hourly point",
+        "3 hourly point",
+        "three hour point",
+    ],
     "6hr": ["6hr", "6 hour", "6-hour", "6 hourly", "6 hour mean", "six hour"],
-    "6hrPt": ["6hrPt", "6 hour point", "6-hourly point", "6 hourly point", "six hour point"],
+    "6hrPt": [
+        "6hrPt",
+        "6 hour point",
+        "6-hourly point",
+        "6 hourly point",
+        "six hour point",
+    ],
     "day": ["day", "daily", "day mean", "per day"],
     "dec": ["dec", "decadal", "decadal mean"],
     "fx": ["fx", "fixed", "time invariant", "fixed time"],
@@ -82,6 +244,29 @@ FREQUENCY_MAP = {
     "yr": ["yr", "yearly", "annual", "year", "annual mean"],
     "yrPt": ["yrPt", "year point", "yearly point"],
     "subhrPt": ["subhrPt", "sub-hourly point", "sub hourly point"],
+}
+
+SOURCE_MAP = {
+    "CanESM5": [
+        "CanESM5",
+        "canadian earth system model version 5",
+        "canesm5",
+        "can esm5",
+    ],
+    "CESM2": ["CESM2", "community earth system model version 2", "cesm2", "cesm 2"],
+    "MIROC6": [
+        "MIROC6",
+        "model for interdisciplinary research on climate version 6",
+        "miroc6",
+        "miroc 6",
+    ],
+    "IPSL-CM6A-LR": [
+        "IPSL-CM6A-LR",
+        "institut pierre-simon laplace climate model 6a low resolution",
+        "ipsl-cm6a-lr",
+        "ipsl cm6a lr",
+    ],
+    # Add other sources as needed
 }
 
 
@@ -101,7 +286,7 @@ class Pipeline:
     async def on_shutdown(self):
         print(f"{self.name} stopped")
 
-# --- Find all matches ---
+    # --- Find all matches ---
     def find_all_matches(self, text: str, mapping: dict) -> list[str]:
         text_lower = text.lower()
         candidates = []
@@ -115,10 +300,10 @@ class Pipeline:
                     end = start + len(alias_lower)
 
                     if alias_lower.isalnum():
-                        before_ok = start == 0 or not text_lower[start - 1].isalnum(
+                        before_ok = start == 0 or not text_lower[start - 1].isalnum()
+                        after_ok = (
+                            end == len(text_lower) or not text_lower[end].isalnum()
                         )
-                        after_ok = end == len(
-                            text_lower) or not text_lower[end].isalnum()
                         if not (before_ok and after_ok):
                             start = text_lower.find(alias_lower, start + 1)
                             continue
@@ -142,8 +327,7 @@ class Pipeline:
                 continue
 
             overlaps = any(
-                not (candidate["end"] <=
-                     used_start or candidate["start"] >= used_end)
+                not (candidate["end"] <= used_start or candidate["start"] >= used_end)
                 for used_start, used_end in used_ranges
             )
             if overlaps:
@@ -173,6 +357,7 @@ class Pipeline:
         scens_found = self.find_all_matches(text, SCENARIO_MAP)
         insts_found = self.find_all_matches(text, INSTITUTION_MAP)
         freqs_found = self.find_all_matches(text, FREQUENCY_MAP)
+        sources_found = self.find_all_matches(text, SOURCE_MAP)
 
         if vars_found:
             normalized["variable"] = vars_found
@@ -182,7 +367,8 @@ class Pipeline:
             normalized["institution"] = insts_found
         if freqs_found:
             normalized["frequency"] = freqs_found
-
+        if sources_found:
+            normalized["source_id"] = sources_found
         return normalized
 
     async def inlet(self, body: dict, user: Optional[dict] = None) -> dict:
