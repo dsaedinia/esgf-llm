@@ -1,6 +1,7 @@
 import json
 import os
 import random
+import re
 
 SEED = 42
 SAMPLESIZE = 600
@@ -92,62 +93,138 @@ class IntakeCodeGenerator:
                 return key
         return user_input  # Return as is if no match found
 
-    # def add_multiturn(self, ratio: float = 0.3):
-    #     multiturn_conversations = []
+    def add_multiturn(self, ratio: float = 0.3):
+        multiturn_conversations = []
 
-    #     # going to try out adding multiturn conversations to a random sampling of the dataset
-    #     # hopefully this means I can add to the core instructions easily first
-    #     num_multiturn = int(len(self.conversations) * ratio)
-    #     conversation_sample = random.sample(
-    #         range(len(self.conversations)), num_multiturn
-    #     )
-    #     for convo in conversation_sample:
-    #         multi_convo = convo.copy()
-    #         last_code = multi_convo[-1]["content"]
-    #         follow_up = self._add_facet_followup(last_code)
+        # going to try out adding multiturn conversations to a random sampling of the dataset
+        # hopefully this means I can add to the core instructions easily first
+        num_multiturn = int(len(self.conversations) * ratio)
+        conversation_indeces = random.sample(
+            range(len(self.conversations)), num_multiturn
+        )
+        for convo_index in conversation_indeces:
+            multi_convo = self.conversations[convo_index].copy()
+            last_code = multi_convo[-1]["content"]
+            last_code = re.search(r"```python\n(.*?)```", last_code, re.DOTALL)
 
-    #     def _add_facet_to_code(self, code, facet_value, facet_list, search_param):
-    #         # going to use regex to find the search( line and add the facet there
+            # if the snippet has no code
+            if not last_code:
+                continue
 
-    #     # add facet followups like "add variable gpp" for example
-    #     def _add_facet_followup(self, code: str) -> str:
-    #         facet_options = [
-    #             ("gpp", "variable_id gpp", "variables", "variable_id"),
-    #             ("pr", "variable_id pr", "variables", "variable_id"),
-    #             ("ssp585", "experiment_id ssp585", "experiments", "experiment_id"),
-    #             ("mon", "monthly frequency", "frequencies", "frequency"),
-    #             ("CESM2", "model CESM2", "sources", "source_id"),
-    #             (
-    #                 "NASA-GISS",
-    #                 "institution NASA-GISS",
-    #                 "institutions",
-    #                 "institution_id",
-    #             ),
-    #         ]
+            last_code = last_code.group(1)
 
-    #         random.shuffle(facet_options)
-    #         for facet_value, facet_prompt, facet_list, search_param in facet_options:
-    #             if f"{facet_value}" in code:
-    #                 continue  # skip if facet already in code
+            follow_up = self._add_facet_followup(last_code)
 
-    #             new_code = self._add_facet_to_code(code, facet_value, facet_list, search_param)
-    #             if new_code != code:
-    #                 user_prompts = [
-    #                     f"Can you also add {facet_prompt}?",
-    #                     f"Please include {facet_prompt} as well.",
-    #                     f"Add {facet_prompt} to the search?",
-    #                     f"Could you also include {facet_prompt} in the code?",
-    #                 ]
+            if follow_up:
+                multi_convo.extend(follow_up)
+                print(multi_convo)
+                multiturn_conversations.append(multi_convo)
 
-    #                 assistant_responses = [
-    #                     f"Sure! I'll add {facet_prompt}. Here is the updated Python code:",
-    #                     f"Of course! I'll include {facet_prompt}. Here is the revised Python code:",
-    #                     f"Certainly! I'll add {facet_prompt} to the search. Here is the modified Python code:",
-    #                     f"Alright! I'll include {facet_prompt}. Here is the updated Python code:",
-    #                 ]
-    #                 return [
+        self.conversations.extend(multiturn_conversations)
 
-    #                 ]
+    def _add_facet_to_code(self, code, facet_value, facet_list, search_param):
+        # going to use regex to find the search( line and add the facet there
+
+        pattern = rf"{facet_list}\s*=\s*\[(.*?)\]"
+
+        match = re.search(pattern, code, re.DOTALL)
+
+        if match:
+            existing_values = match.group(1).strip()
+
+            if existing_values:
+                new_list = f'{facet_list} = [{existing_values}, "{facet_value}"]'
+
+            else:
+                new_list = f'{facet_list} = ["{facet_value}"]'
+
+            code = code.replace(match.group(0), new_list, 1)
+            return code
+
+        search_match = re.search(
+            r"search_results\s*=\s*cat\.search\((.*?)\)", code, re.DOTALL
+        )
+        if not search_match:
+            return code  # if no search line found, return original code
+
+        comment_match = re.search(r"(# search the catalog.*?\n)", code, re.IGNORECASE)
+
+        if comment_match:
+            insert_pos = comment_match.start()
+        else:
+            # Insert the new list before the search
+            insert_pos = search_match.start()
+
+        new_var_line = f'# specify the {facet_list} to search for\n{facet_list} = ["{facet_value}"]\n\n'
+        code = code[:insert_pos] + new_var_line + code[insert_pos:]
+
+        # Add parameter to search call
+        existing_params = search_match.group(1).strip()
+        if existing_params and not existing_params.endswith(","):
+            existing_params += ","
+        new_params = f"{existing_params}\n    {search_param}={facet_list}"
+
+        code = re.sub(
+            r"search_results\s*=\s*cat\.search\((.*?)\)",
+            f"search_results = cat.search({new_params}\n)",
+            code,
+            flags=re.DOTALL,
+            count=1,
+        )
+        return code
+
+    # add facet followups like "add variable gpp" for example
+    def _add_facet_followup(self, code: str) -> str:
+        facet_options = [
+            ("gpp", "variable_id gpp", "variables", "variable_id"),
+            ("pr", "variable_id pr", "variables", "variable_id"),
+            ("rsds", "variable rsds", "variables", "variable_id"),
+            ("ssp585", "experiment_id ssp585", "experiments", "experiment_id"),
+            ("mon", "monthly frequency", "frequencies", "frequency"),
+            ("CESM2", "model CESM2", "sources", "source_id"),
+            (
+                "NASA-GISS",
+                "institution NASA-GISS",
+                "institutions",
+                "institution_id",
+            ),
+            ("day", "daily frequency", "frequencies", "frequency"),
+            ("CanESM5", "model CanESM5", "sources", "source_id"),
+            ("historical", "experiment_id historical", "experiments", "experiment_id"),
+        ]
+
+        random.shuffle(facet_options)
+        for facet_value, facet_prompt, facet_list, search_param in facet_options:
+            if f"{facet_value}" in code:
+                continue  # skip if facet already in code
+
+            new_code = self._add_facet_to_code(
+                code, facet_value, facet_list, search_param
+            )
+            if new_code != code:
+                # wrap it back in python ```
+                new_code = f"```python\n{new_code}```"
+                user_prompts = [
+                    f"Can you also add {facet_prompt}?",
+                    f"Please include {facet_prompt} as well.",
+                    f"Add {facet_prompt} to the search?",
+                    f"Could you also include {facet_prompt} in the code?",
+                ]
+
+                assistant_responses = [
+                    f"Sure! I'll add {facet_prompt}. Here is the updated Python code:",
+                    f"Of course! I'll include {facet_prompt}. Here is the revised Python code:",
+                    f"Certainly! I'll add {facet_prompt} to the search. Here is the modified Python code:",
+                    f"Alright! I'll include {facet_prompt}. Here is the updated Python code:",
+                ]
+                return [
+                    {"role": "user", "content": random.choice(user_prompts)},
+                    {
+                        "role": "assistant",
+                        "content": random.choice(assistant_responses) + f"\n{new_code}",
+                    },
+                ]
+        return []  # return empty if no facet added
 
     ################################################################
     # Code Generation Functions grouped by facets and combinations #
@@ -610,7 +687,7 @@ from intake_esgf import ESGFCatalog
 # initialize the catalog
 cat = ESGFCatalog()
 
-# specify the scenarios and variables to search for
+# specify the scenario/experiments and variables to search for
 experiments = [{scenario}]
 variables = [{variable}]
 
@@ -685,7 +762,7 @@ pd.set_option("display.width", None)         # wider view
 # initialize the catalog
 cat = ESGFCatalog()
 
-# specify the scenarios and variables to search for
+# specify the scenarios/experiments and variables to search for
 experiments = [{scenario}]
 variables = [{variable}]
 
@@ -719,7 +796,7 @@ pd.set_option("display.width", None)         # wider view
 # initialize the catalog
 cat = ESGFCatalog()
 
-# specify the scenarios and variables to search for
+# specify the scenarios/experiments and variables to search for
 experiments = [{scenario}]
 variables = [{variable}]
 
@@ -1248,13 +1325,13 @@ cat = ESGFCatalog()
 # specify variables, source/model(s) and scenario/experiment(s) to search for
 variables = [{variable}]
 sources = [{source}]
-scenarios = [{scenario}]
+experiments = [{scenario}]
 
 # search the catalog for datasets with the specified facets
 search_results = cat.search(
     variable_id=variables,
     source_id=sources,
-    experiment_id=scenarios
+    experiment_id=experiments
 )
 
 # remove ensemble members to view first entry per dataset and reduce clutter
@@ -1283,13 +1360,13 @@ cat = ESGFCatalog()
 # specify variables, source/model(s) and scenario/experiment(s) to search for
 variables = [{variable}]
 sources = [{source}]
-scenarios = [{scenario}]
+experiments = [{scenario}]
 
 # search the catalog for datasets with the specified facets
 search_results = cat.search(
     variable_id=variables,
     source_id=sources,
-    experiment_id=scenarios
+    experiment_id=experiments
 )
 
 # remove ensemble members to view first entry per dataset and reduce clutter
@@ -2348,6 +2425,7 @@ dsd = search_results.to_dataset_dict()
         # List of all models
         all_snippets += self.generate_list_all_models()
         print(f"Total snippets generated: {len(all_snippets)}")
+
         # convert to chatML
         self.snippets_to_chatML(all_snippets)
 
